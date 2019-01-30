@@ -1,0 +1,15 @@
+{% block cta %}
+<section class="sub-feature__--cta-only">
+    <ul>
+        <li>&nbsp;</li>
+        {% if search_results.count > 0 %}
+            <li>Found {{ search_results.count }} {{ 'Item'|pluralize(search_results.count) }}</li>
+        {% elseif search_results.count == 0 %}
+            <li>No results found - try searching for only part of a movie/game title</li>
+        {% else %}
+            <li>{{ page.header.ctaText }}</li>
+        {% endif %}
+        <li>&nbsp;</li>
+    </ul>
+</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+/**
+ * Contact page form styles
+ * contact-block is block level of BEM
+ * Contains stlyes for form inputs
+ */
+.contact-block{
+    @extend %make-flex;
+    flex-direction: column;
+    height: 15em;
+    padding-bottom: $base-line-height;
+    
+    input, textarea{
+        border: 0;
+        border-bottom: 2px solid #ddd;
+        flex: 1;
+        margin: $base-line-height*.25 0;
+        padding: $base-line-height*.25;
+    }
+    
+    textarea{ flex: 3; }
+}

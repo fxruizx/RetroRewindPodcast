@@ -1,0 +1,41 @@
+/*
+ * Responsive styles are applied to layout classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: $mob-desk-break){
+    .wrapper{
+        min-height: 100%;
+        position: relative;
+    }
+    
+    .page-feature{ padding: $base-line-height*2 $base-line-height; }
+    .page-feature__--heading-only{ padding: $base-line-height; }
+    .sub-feature{ padding: $base-line-height; }
+    .sub-feature__--cta-only{ 
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .content{
+        &:first-child{ padding-top: $base-line-height; }
+        &:last-child{ padding-bottom: $base-line-height; }
+    }
+    
+    .related-content{
+        .ep-intro-block__copy-links{
+            ul{ flex-direction: row; }
+        }
+    }
+    
+    .social-connect{
+        ul{ 
+            flex-direction: row; 
+            li:first-child{ padding-right: 3.25%; }
+        }
+    }
+    
+    .site-footer{
+        //flex-basis: 24%;
+        //min-height: 30%;
+        //height: 30%;
+    }
+}

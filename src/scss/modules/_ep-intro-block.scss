@@ -1,0 +1,170 @@
+/**
+ * Container for elements introducing the episode
+ * Block level element of BEM
+ * Will contain elements for: episode cover art, player, title, number, quick links
+ * Can be reused in multiple areas, scaled by parent of .ep-intro-block
+ */
+.ep-intro-block{
+    @extend %make-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+    min-width:100px;
+    width: 100%;
+    
+    &__web-player{
+        box-shadow: 0px -1px 10px 0px $pcolor-shade-sm;
+        display: inline-block;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        flex: 2;
+        margin: 0 auto;
+        min-width: 100px;
+        width: 100%; // <-- This is set to 32% in rrp-v3
+        
+        /**
+         * This :after pseudo class is what forces the div containing the image
+         *   to expand and show the image, otherwise it will collapse and the 
+         *   image with be hidden
+         */
+        &:after {
+            padding-top: 100%;
+            display: block;
+            content: '';
+        }
+    }
+    
+    /**
+     * Styles for the feature image to help crop it to a square
+     */
+    &__cover-art{ 
+        border: 0;
+        position: absolute; 
+        top: -34%; 
+        left: -3.5%;
+        height: auto;
+        max-width: 107%;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+    }
+    
+    /**
+     * Styles for main RRP coverart to fade out on homepage page-feature area
+     *  leaving the episode art - all when play button is clicked
+     */
+    &__cover-art--to-fade{
+        opacity: 1;
+        transition: opacity .5s ease-out;
+        z-index: 101;
+    }
+     
+    
+    /**
+     * Play Button styles for the icon that appears over the cover art
+     */
+    &__play-btn{ 
+        @extend %make-flex;
+        border: none;
+        cursor: pointer;
+        justify-content: center;
+        position: relative; 
+        
+        &:hover{ border: none; }
+        
+        /**
+         * Play Icon styles
+         */
+        svg, i{
+            fill: rgba(255, 255, 255, 0.75);
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            z-index: 200;
+        }
+    }
+    
+    /**
+     * Stlyes for audio player in ep-intro-block__audio-fill
+     */
+    &__audio-fill{
+        audio{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1500;
+        }
+    }
+    
+    /**
+     * Styles for the copy and links in the episode intro block
+     * Assumes that that ep-intro-blocks are only on non-light backgrounds
+     */
+    &__copy-links{
+        flex: 1;
+        min-width: 100px;
+        
+        h1, p, a{ color: $pcolor-tint-lg; }
+        
+        h1{ 
+            font-family: $copy-font-fam;
+            font-weight: normal;
+            line-height: 1;
+            margin-top: 0;
+            //font-size: $large-font-size;
+            //word-spacing: -.5em;
+            //text-align: center;
+        }
+        
+        small{ 
+            color: $pcolor-tint-md;
+            display: inline-block;
+            font-size: .5em;
+            line-height: 1.25;
+            margin: .5em 0 .2em 0
+        }
+        
+        h3{ 
+            font-size: $base-font-size;
+            margin: 0; 
+        }
+        
+        //p{ padding: 0 $base-line-height; }
+        
+        ul{
+            list-style: none; 
+        }
+        
+        li{ display: inline-block; padding: 0 $base-line-height*.25 0 0; }
+    }
+}
+
+/**
+ * Special instance of .ep-intro-block
+ * When instance is in .page-feature, add margin around container and no max width
+ */
+.page-feature{
+    .ep-intro-block{ max-width: none; }
+    .ep-intro-block__copy-links{ margin: $base-line-height*.5 $base-line-height; }
+    
+}
+
+/**
+ * Special instance of .ep-intro-block
+ * When instance is in .sub-feature, 
+ *   remove margin around container added by @extending .page-feature
+ */
+.sub-feature{
+    .ep-intro-block__copy-links{ 
+        margin: $base-line-height*.5 $base-line-height*.25; 
+        
+        h1, li{ text-align: center; }
+    }
+    
+}
+ 

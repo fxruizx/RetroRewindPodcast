@@ -1,0 +1,94 @@
+title: RSS Feed
+'@extends':
+  type: default
+  context: blueprints://pages
+    
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      
+      fields: 
+        rssfeed_fields:
+          type: tab
+          title: RSS Fields
+      
+          fields:
+            header.feed.limit:
+              type: text
+              label: Feed counter
+              default: 10
+              validate:
+                type: int
+
+            header.feed.title:
+              type: text
+              label: Feed Title
+
+            header.feed.description:
+              type: textarea
+              label: Feed Description
+              rows: 4
+              
+            header.feed.link:
+              type: text
+              label: Feed Link
+
+            lang:
+              type: text
+              label: Feed language code
+              default: en
+              placeholder: en
+              validate:
+                pattern: "[a-zA-Z]{2,3}(-[a-zA-Z]{2,3})?"
+            
+            header.feed.copyright:
+              type: text
+              label: Feed Copyright Holder
+            
+            header.feed.iAuthor:
+              type: text
+              label: 'iTunes Author/Main Host(s)'
+              
+            header.feed.iSummary:
+              type: textarea
+              label: 'iTunes Summary'
+              placeholder: Defaults to Feed Description if this is left blank
+              rows: 4
+              
+            header.feed.iOwnerName:
+              type: text
+              label: iTunes Owner Name
+            
+            header.feed.iOwnerEmail:
+              type: email
+              label: iTunes Owner Email
+            
+            header.feed.iExplicit:
+              type: text
+              label: 'iTunes Explicit (yes/no)'
+            
+            header.feed.iImage:
+              label: 'iTunes Cover Art (jpg/png)'
+              type: file
+              multiple: false
+              destination: '@self'
+              accept:
+                - image/png
+                - image/jpg
+        
+            header.feed.iSubtitle:
+              type: text
+              label: iTunes Subtitle
+            
+            header.feed.categories:
+                type: selectize
+                size: long
+                style: vertical
+                label: 'Categories (Full list https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12)'
+                classes: fancy
+                validate:
+                    type: commalist
+              
+              

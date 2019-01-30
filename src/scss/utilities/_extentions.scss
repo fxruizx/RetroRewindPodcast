@@ -1,0 +1,51 @@
+/**
+ * Turn an element into a Flexbox element
+ */
+%make-flex{ 
+    display: flex; 
+    &>*{ 
+        box-sizing: border-box;
+        //flex: 1 0 auto;
+    }
+}
+
+/**
+ * Make anchor links in header/nav, in different Blocks, have consistent coloring
+ */
+%make-header-anchor-color{
+    & a{ color: $pcolor-tint-lg; }
+    & a:hover{ color: $pcolor-tint-md; } 
+}
+
+/**
+ * Colors for text in dark (black or red areas)
+ * Not meant to be applied to <a> tags themselves
+ */
+%light-text-on-dark{
+    color: $pcolor-tint-lg;
+    
+    a{
+        border-bottom-color: $pcolor-tint-md;
+        color: $pcolor-tint-lg;
+        
+        &:hover{ 
+            border-bottom-color: $pcolor-tint-lg;
+        }
+    }
+}
+
+/**
+ * Colors for text in light (white areas)
+ * Not meant to be applied to <a> tags themselves
+ */
+%dark-text-on-light{
+    color: $pcolor-shade-lg;
+    
+    a{
+        color: $pcolor-tint-sm;
+        
+        &:hover{ 
+            color: .1em dotted $pcolor-tint-md;
+        }
+    }
+}

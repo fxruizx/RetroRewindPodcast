@@ -1,0 +1,111 @@
+{% extends 'partials/base.html.twig' %}
+
+{# Create collection dynamically to be able to pull host photos #}
+{% set hostCollection = page.evaluate([{'@page.children': '/hosts'}]) %}
+
+{% block header %}
+    <!-- HEADER INCLUDES GLOBAL NAVIGATION -->
+    {% include 'partials/header.html.twig' %}
+{% endblock %}
+{% block body %}
+    <section class="page-feature">
+        <!-- PAGE'S EPISODE IS SHOWN AS THE FEATURE HERE -->
+        {% include 'partials/selected-episode.html.twig' %}
+    </section>
+    <section class="sub-feature">
+        <h1>Hosts</h1>
+        <ul>
+        {% set counter = 1 %}
+        {% for host in page.taxonomy.hosts | reverse %}    
+            <li class="host-intro-block {% if page.taxonomy.hosts | length < 3 %}host-intro-block__--2-hosts{% endif %}">
+                <div class="host-intro-block__art-wrap">
+                    <a href="{{ base_url_relative }}/hosts/{{ host | lower | hyphenize }}">
+                    {% for hosts in hostCollection %}
+                        {% if hosts.title == host %}
+                            {% if hosts.header.hostSocialMediaImage %}
+                                <img class="host-intro-block__host-art" src="{{ hosts.header.hostSocialMediaImage }}" title="{{ hosts.title }}" alt="{{ hosts.title }}"/>
+                            {% elseif hosts.media.images | length > 0 %}
+                                {% set coverImg = hosts.media.images | first %}
+                                {{ coverImg.html(hosts.title,hosts.title,'host-intro-block__host-art') }}
+                            {% else %}
+                                <img class="host-intro-block__host-art" src="http://placehold.it/736?text=A113">
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    </a>
+                </div>
+                <div class="host-intro-block__copy-links">
+                    <h1><a href="{{ base_url_relative }}/hosts/{{ host | lower | hyphenize }}">{{ host }}</a></h1> 
+                </div>
+            </li>
+            {% if counter | modulus(3) == 0 %}
+            </ul>
+            <ul>
+            {% endif %}
+            {% set counter=counter+1 %}
+        {% endfor %}    
+        </ul>
+    </section>
+    <section class="content">
+        {% if page.header.timestamps %}
+        <h1>In this Episode:</h1>
+        <ul class="timestamps-block">
+            {% for time in page.header.timestamps | keys %}
+                <li class="timestamps-block__timestamp">
+                    <div class="timestamps-block__time" data-time="{{ time }}">{{ time }}</div>
+                    {% if page.header.timestamps[time] | contains('FINAL RATING') %}
+                       <div class="timestamps-block__desc">FINAL RATING: {{ page.taxonomy.finalRating | first }}</div>
+                    {% elseif page.header.timestamps[time] | contains('final review') %}
+                        <div class="timestamps-block__desc">FINAL RATING: {{ page.taxonomy.finalRating | first }}</div>
+                    {% else %}
+                    <div class="timestamps-block__desc">{{ page.header.timestamps[time] | replace({
+                                                                                                    'Facebook Group':'<a href="https://www.facebook.com/groups/retrorewindpodcast/">Facebook Group</a>',
+                                                                                                    'Twitter':'<a href="https://www.twitter.com/retrorewindpod/">Twitter</a>',
+                                                                                                    'Instagram':'<a href="https://www.instagram.com/retrorewindpod/">Instagram</a>',
+                                                                                                    'We give our final rating for Mortal Kombat: Classic, Nostalgic, or Tragic': page.taxonomy.finalRating | first  
+                                                                                                    }) }}</div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            {{ page.content }}
+        {% endif %}
+        <h1>Comment on this Episode</h1>
+        <div id="disqus_thread"></div>
+        <script>
+        
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "{{ page.url(true, true) }}";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "{{ uri.url(true) }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://retrorewindpodcast.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+    </section>
+    <section class="related-content">
+        {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+            <h1>Related Content</h1>
+            {% include 'partials/relatedpages.html.twig' %}
+        {% endif %}
+    </section>
+    <section class="social-connect">
+        <!-- DISPLAY EMBEDS FROM YOUTUBE, INSTAGRAM, AND TWITTER -->
+        {% include 'partials/social-connect.html.twig' %}
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}

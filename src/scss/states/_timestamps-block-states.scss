@@ -1,0 +1,20 @@
+/*
+ * Responsive styles are applied to the timestamps-block when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: $mob-desk-break){
+    .timestamps-block{
+        /**
+         * Styles for the times code
+         */
+        &__time{
+            flex: 1;
+        }
+        
+        /**
+         * Styles for the description of what happens at the corresponding time code
+         */
+        &__desc{
+            flex: 9;
+        }
+    }
+}

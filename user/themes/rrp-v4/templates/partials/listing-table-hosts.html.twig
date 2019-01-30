@@ -1,0 +1,44 @@
+{% if page.collection | length > 0 %}
+    {% set useCollection = page.collection %}
+{% endif %}
+
+<table id="sortable-table" class="archivelist-block">
+    <tr data-sort-method='none'>
+        <th class="hide-mobile"><!--Image--></th>
+        <th>Name</th>
+        <th>Rank</th>
+        <th>Station</th>
+        <th data-sort-default class="hide-mobile">Episode Count</th>
+    </tr>
+    {% for item in useCollection %}
+    {% set hostEpCollection = page.evaluate([{ '@taxonomy.hosts': item.title }]) %}
+    {% set hostEpCount = hostEpCollection | length %}
+    <tr>
+        <td class="hide-mobile">
+            {% if item.header.hostSocialMediaImage %}
+                <img class="hosts-listing" style="width:64px; height:64px" src="{{ item.header.hostSocialMediaImage }}" title="{{ item.title }}" alt="{{ item.title }}"/>
+            {% else %}
+                {% set coverImg = item.media.images|first %}
+                {{ coverImg.resize(64,64).html(page.title,page.title,'hosts-listing') }}
+            {% endif %}
+        </td>
+        <td class="archivelist-block__ep-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td>
+            {% if hostEpCount > 100 %}Command
+            {% elseif hostEpCount < 100 and hostEpCount > 9 %}Officer
+            {% elseif hostEpCount < 10 and hostEpCount > 5 %}Chief
+            {% elseif hostEpCount < 6 and hostEpCount > 2 %}Shipman
+            {% else %} 
+            {% endif %}
+            
+        </td>
+        <td>{{ item.header.hostRank }}</a></td>
+        <td >{{ hostEpCount }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    var table = document.getElementById('sortable-table');
+    var sort = new Tablesort(table);
+    new Tablesort(document.getElementById('sortable-table'));
+</script>

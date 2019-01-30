@@ -1,0 +1,35 @@
+/**
+ * Container for elements in a timestamp/chapter list
+ * Block level element of BEM
+ * Will contain elements: &__time and &__desc
+ * Meant for use within main content areas
+ */
+.timestamps-block{
+    @extend %make-flex;
+    @extend %dark-text-on-light;
+    flex-direction: column;
+    
+    /**
+     * Styles for the timestamp, <li>
+     */
+    &__timestamp{
+        @extend %make-flex;
+        flex-direction: row;
+        padding-bottom: $base-line-height/2;
+    }
+    
+    /**
+     * Styles for the times code
+     */
+    &__time{
+        flex: 2;
+        font-weight: bold;
+    }
+    
+    /**
+     * Styles for the description of what happens at the corresponding time code
+     */
+    &__desc{
+        flex: 8;
+    }
+}

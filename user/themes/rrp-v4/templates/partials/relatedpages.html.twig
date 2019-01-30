@@ -1,0 +1,25 @@
+<ul>
+    {% for related_path, score in related_pages %}
+        {% set related = grav['pages'].get(related_path) %}
+        {% if related %}
+            <li class="ep-intro-block">
+                <div class="ep-intro-block__copy-links">
+                    {% if related.header.shortTitle %}
+                        <h3><a href="{{ related.url }}">{{ related.header.shortTitle }}</a></h3>
+                    {% else %}
+                        <h3><a href="{{ related.url }}">{{ related.title }}</a></h3>
+                    {% endif %}
+                    <ul>
+                        <li><a href="{{ related.url }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ related.header.epNum }}</a></li>
+                        <li><a href="{{ related.header.enclosure | split('"') | slice(1,1) | first }}"><i class="fa fa-download" aria-hidden="true"></i> <span class="hide-mobile">MP3</span></a></li>
+                    </ul>   
+                </div>
+                
+                {% if config.plugins.relatedpages.show_score %}
+                    <!--span class="score">{{ score }}</span-->
+                {% endif %}
+                <!--h3><a href="{{ related.url }}" title="{{ related.title }}">{{ related.title }}</a></h3-->
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

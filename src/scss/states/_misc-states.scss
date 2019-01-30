@@ -1,0 +1,9 @@
+@media (min-width: 640px){
+    /**
+     * Show elements that are hidden at mobile sizes
+     */
+    .hide-mobile{ display: inline; }
+    th,td{
+        &.hide-mobile{ display: table-cell; }
+    }
+}

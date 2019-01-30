@@ -1,0 +1,41 @@
+//EXTERNAL CSS
+@import 'http://yui.yahooapis.com/pure/0.6.0/pure-min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+
+//RESET
+@import 'normalize';
+
+//CUSTOM GRAV STYLES
+@import 'custom';
+
+//BASE
+@import 'base/base-manifest';
+
+//UTILITIES
+@import 'utilities/utilities-manifest';
+
+//LAYOUT
+@import 'layout/layout-manifest';
+
+//MODULES
+@import 'modules/modules-manifest';
+
+//STATES
+@import 'states/states-manifest';
+
+
+/*.color-box-wrapper{
+    display: flex;
+    width: 100%;
+    
+    div{ flex-grow: 1; }
+
+    .color-box-1{ background-color: $pcolor-shade-lg; }
+    .color-box-2{ background-color: $pcolor-shade-md; }
+    .color-box-3{ background-color: $pcolor-shade-sm; }
+    .color-box-4{ background-color: $primary-color; }
+    .color-box-5{ background-color: $pcolor-tint-sm; }
+    .color-box-6{ background-color: $pcolor-tint-md; }
+    .color-box-7{ background-color: $pcolor-tint-lg; }
+}
+*/

@@ -1,0 +1,16 @@
+{% extends 'default.html.twig' %}
+
+{% block content %}
+<section class="content basic-vpadding">
+    <!-- DISPLAY TABLE OF EPISODES -->
+    {% if page.title == 'Hosts' %}
+        {% include 'partials/listing-table-hosts.html.twig' %}
+    {% else %}
+        {% include 'partials/listing-table.html.twig' %}
+    {% endif %}
+</section>
+<section class="social-connect">
+    <!-- DISPLAY EMBEDS FROM YOUTUBE, INSTAGRAM, AND TWITTER -->
+    {% include 'partials/social-connect.html.twig' %}
+</section>
+{% endblock %}

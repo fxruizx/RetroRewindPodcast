@@ -1,0 +1,55 @@
+{% if page.collection | length > 0 %}
+    {% set useCollection = page.collection %}
+{% elseif hostEpCollection %}
+    {% set useCollection = hostEpCollection %}
+{% endif %}
+    <!--ul>
+        {% for item in useCollection %}
+        <li>/{{ item.header.epNum }}: /episodes/{{ item.slug }}</li>
+        {% endfor %}
+    </ul-->
+<table id="sortable-table" class="archivelist-block">
+    <tr data-sort-method='none'>
+        <th>Ep</th>
+        <th>Title</th>
+        <th class="hide-mobile">Decade/Type</th>
+        {# Used for normal listings #}
+        {% if not page.header.hostRank %} <th class="hide-mobile">Genre(s)</th>
+        {# Used for listing on host page #}
+        {% else %} <th class="hide-mobile">{{ page.title | split(' ') |first }}'s Rating</th> {% endif %}
+        <th>Final Rating</th>
+    </tr>
+    {% for item in useCollection %}
+    <tr>
+        <td>{{ item.header.epNum }}</td>
+        <td class="archivelist-block__ep-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+        <td class="hide-mobile">{{ item.taxonomy.decadeType[0] }}</td>
+        
+        {# Used for normal listings #}
+        {% if not page.header.hostRank %}
+            <td class="hide-mobile">
+                {% for genre in item.taxonomy.genre %}
+                <a class="tag-anchor__dark" href="{{ base_url_relative }}/genres/{{ genre | lower | hyphenize }}">{{ genre }}</a> 
+                {% endfor %}
+            </td>
+        {# Used for listing on host page #}
+        {% else %}
+            <td class="hide-mobile">
+                {% for rateC in item.taxonomy.rateClassic %}
+                    {% if rateC == page.title %} Classic {% endif %}
+                {% endfor %}
+                {% for rateN in item.taxonomy.rateNostalgic %}
+                    {% if rateN == page.title %} Nostalgic {% endif %}
+                {% endfor %}
+                {% for rateT in item.taxonomy.rateTragic %}
+                    {% if rateT == page.title %} Tragic {% endif %}
+                {% endfor %}
+            </td>
+        {% endif %}
+        <td>{{ item.taxonomy.finalRating[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<script>
+    new Tablesort(document.getElementById('sortable-table'));
+</script>

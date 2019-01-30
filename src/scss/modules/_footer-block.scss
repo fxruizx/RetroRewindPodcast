@@ -1,0 +1,17 @@
+/**
+ * Styles for the elements that go in the site footer
+ * Below styles are created with "mobile-first" approach
+ * For tablet/desktop styles, see "../scss/states" 
+ * Class footer-block is the Block of the BEM heiarchy
+ */
+.footer-block{
+    flex: 1;
+    
+    h3, li{ margin-bottom: $base-line-height*.25; }
+    ul{ margin-top: 0; }
+    
+    &:nth-child(2n+1){ margin-right: 2%; }
+    &:nth-child(2n+0){ margin-left: 2%; }
+    
+    &__copyright{ flex-basis: 100%; }
+}

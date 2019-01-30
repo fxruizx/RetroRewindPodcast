@@ -1,0 +1,207 @@
+/**
+ * Wrapper for all the site elements 
+ */
+.wrapper{ 
+    @extend %make-flex;
+    flex-direction: column;
+    //height: 100%;
+    margin: $base-line-height $base-line-height 0 $base-line-height;
+    padding: 4.4em 0 0 0;
+}
+
+/**
+ * Class for <header>
+ * Contains header-block module elements 
+ */
+.site-header{ 
+    @extend %make-flex;
+    background-color: $pcolor-shade-lg;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between; 
+    padding: $base-line-height*.5 $base-line-height;
+    margin: 0 $base-line-height*-1 $base-line-height*-1$base-line-height*-1;
+}
+
+/**
+ * Class for section below the header where latest episode or 
+ *   intro for single episodes is shown
+ *   Contains ep-intro-block elements
+ */
+.page-feature{
+    @extend %light-text-on-dark;
+    flex: 1;
+    //flex-basis: 100%;
+    background-color: $pcolor-shade-sm;
+    margin: $base-line-height*(-1.17) $base-line-height*(-1) 0 $base-line-height*(-1);
+    padding: 0;
+    height: auto;
+    //min-height: 100%;
+}
+
+/**
+ * Class for section below the header when there is only a headline
+ *   Contains h1 elements
+ */
+.page-feature__--heading-only{
+    @extend .page-feature;
+    @extend %make-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $base-line-height;
+    
+    h1{
+        color: $pcolor-tint-lg;
+        font-family: $copy-font-fam;
+        line-height: 1;
+        text-align: center;
+    }
+}
+
+/**
+ * Class for section below the feature area and above the content area
+ * Utilized for most popular episodes and hosts for single episode pages
+ * Contains ep-intro-block elements
+ */
+.sub-feature{
+    @extend .page-feature;
+    background-color: $primary-color;
+    margin-top: 0;
+    padding: $base-line-height*.5 $base-line-height;
+    
+    /**
+     * Title of the sub-feature section
+     */
+    & h1{ 
+        color: $pcolor-tint-lg;
+        font-size: $base-font-size; 
+        word-spacing: -.5em;
+    }
+    
+    /**
+     * The listing of elements in the sub-feature
+     * Planned to contain ep-intro-blocks and host-blocks
+     */
+    & ul{ 
+        @extend %make-flex; 
+        justify-content: center;
+    
+        li{ 
+            
+            &:first-child{ 
+                margin-left: 0;
+                padding-right: 2%;
+            }
+            &:nth-child(2n+2){ padding: 0 1%; } // Every middle child in a set of 3
+            &:last-child{
+                margin-right: 0;
+                padding-left: 2%; 
+            }
+            
+            h1{
+                font-size: $base-font-size;
+                margin: $base-line-height*.25 0;
+                word-spacing: 0;
+            }
+        }
+    }
+}
+
+/**
+ * Class for section below the page-feature when there is only a cta button
+ *   Contains h1 elements
+ */
+.sub-feature__--cta-only{
+    @extend .sub-feature;
+    @extend %make-flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/**
+ * Tagline styles for a ribbon that only appears on the homepage layout at this point
+ */
+.tagline-ribbon{
+    @extend .sub-feature;
+    background-color: #3F0909;
+    box-shadow: inset 0 2px 5px #340000;
+    color: $pcolor-tint-md;
+    font-size: $medium-font-size;
+    padding-bottom: $base-line-height;
+    padding-top: $base-line-height;
+    text-align: center;
+}
+
+/**
+ * Class for section of the content area (below feature and sub-feature)
+ * Utilized for show notes or other content to be mostly read
+ */
+.content{
+    @extend %dark-text-on-light;
+    flex: 7;
+    padding: $base-line-height 0 0 0;
+    
+    h1{
+        color: $pcolor-shade-lg;
+        font-size: $base-font-size; 
+        word-spacing: -.5em;
+    }
+}
+
+/**
+ * Class for section of the related content area (below content on episode pages)
+ * Utilized for dynamically generated related episodes
+ */
+.related-content{
+    @extend .content;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: $base-line-height;
+    
+    ul{ 
+        @extend %make-flex; 
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/**
+ * Class for section of social media/connect with us
+ * Utilized for YouTube, Instagram, Twitter embeds
+ */
+.social-connect{
+    @extend .sub-feature;
+    background-color: $pcolor-shade-sm;
+    flex: 1;
+    
+    ul{ 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 auto; 
+        
+        li{ padding: 0; }
+        li:last-child{ padding-left: 0; }
+        li:nth-child(2n+2){ padding-right: 0; }
+    }
+}
+
+/**
+ * Class for <footer>
+ * Contains footer-block module elements 
+ */
+.site-footer{
+    @extend .site-header;
+    @extend %light-text-on-dark;
+    flex: 1;
+    //flex-basis: 39%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    //min-height: 38%;
+    //height: 38%;
+}

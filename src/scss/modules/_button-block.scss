@@ -1,0 +1,86 @@
+/**
+ * Styles shared by all <a> styled as buttons
+ */
+a.button-block, .button-block{
+    border: none;
+    border-radius: .25em;
+    box-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    font-weight: bold;
+    margin: $base-line-height*.5 auto;
+    padding: $base-line-height*.25 $base-line-height;
+    text-align: center; 
+    
+    /**
+     * Lignt version of the buttons, used on darker backgrounds
+     */
+    &__light{
+        @extend .button-block;
+        background-color: $pcolor-tint-lg;
+        color: $pcolor-shade-sm;
+        
+        &:hover{
+            background-color: $pcolor-shade-sm;
+            border-bottom: none;
+            color: $pcolor-tint-lg;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+            padding-bottom: $base-line-height*.25;
+        }
+    }
+    
+    /**
+     * Dark version of the buttons, used on lighter backgrounds
+     */
+    &__dark{
+        @extend .button-block;
+        background-color: $primary-color;
+        color: $pcolor-tint-lg;
+        
+        &:hover{
+            background-color: $pcolor-shade-sm;
+            border-bottom: none;
+            color: $pcolor-tint-lg;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+            padding-bottom: $base-line-height*.25;
+        }
+    }
+}
+
+/**
+ * Dark version of anchors to mimic tags/small buttons
+ */
+a.tag-anchor__dark, .tag-anchor__dark{
+    /**
+     * Extend dark so that tags are not so visually dominant in light areas
+     */
+    @extend .button-block__light;
+    border: 1px solid;
+    box-shadow: none;
+    font-size: $small-font-size;
+    font-weight: normal;
+    padding: 0 .5em;
+    margin: 0.25em .05em;
+}
+
+/**
+ * Lignt version of anchors to mimic tags/small buttons
+ */
+a.tag-anchor__light, .tag-anchor__light{
+    /**
+     * Extend dark so that tags are not so visually dominant in light areas
+     */
+    @extend .button-block__dark;
+    border: 1px solid;
+    box-shadow: none;
+    font-size: $small-font-size;
+    font-weight: normal;
+    padding: .2em .5em;
+    margin: 0 .15em;
+}
+
+a.tag-anchor__light, .tag-anchor__light, a.tag-anchor__dark, .tag-anchor__dark{
+    &:hover{ 
+        border-bottom: 1px solid;
+        padding-bottom: 0; 
+    }
+}

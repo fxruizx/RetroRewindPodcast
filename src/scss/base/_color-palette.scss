@@ -1,0 +1,27 @@
+/**
+ * Primary Color is a slightly burned red.
+ */
+$primary-color: #911;//#0071c5;//
+
+/**
+ * Shades of the Primary Color 
+ * sm is slightly darker
+ * lg is much darker
+ */
+$pcolor-shade-sm: darken($primary-color, 15%);
+$pcolor-shade-md: darken($primary-color, 25%);
+$pcolor-shade-lg: darken($primary-color, 35%);
+
+/**
+ * Tints of the Primary Color
+ * sm is slightly lighter
+ * lg is much lighter
+ */
+$pcolor-tint-sm: lighten($primary-color, 10%);
+$pcolor-tint-md: lighten($primary-color, 20%);
+$pcolor-tint-lg: lighten($primary-color, 90%);
+
+/**
+ * Secondary Color is a dark grey.
+ */
+$secondary-color: #222;

@@ -1,0 +1,35 @@
+{% for meta in page.metadata %}
+<meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
+
+{% endfor %}
+<!-- Metadata tags for Facebook/Open Graph -->
+{% set coverImg = page.media.images|first %}
+{% set mp3Url = page.header.enclosure | split('"') | slice(1,1) | first %}
+<meta property="og:locale" content="en_us" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{% if page.header.epNum  %}{{ page.summary() | replace({ '<p>':'','</p>':''}) }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}" />
+{% if page.title == 'Home'%}
+<meta property="og:title" content="{{ site.title }}" />
+{% else %}
+<meta property="og:title" content="{{ page.title }}{% if page.header.epNum %} :: {{ site.title }} #{{ page.header.epNum }}{% endif %}" />
+{% endif %}
+<meta property="og:url" content="{{ page.url(true) }}" />
+<meta property="article:author" content="https://www.facebook.com/franciscoxruiz" />
+<meta property="article:publisher" content="https://www.facebook.com/retrorewindpod" />
+{% for tag in page.taxonomy.genre %}
+<meta property="article:tag" content="{{ tag }}" />
+{% endfor %}
+<meta property="og:image" content="{{ uri.base }}{{ coverImg.url }}" />
+{# if mp3Url #}
+<!--meta property="og:audio" content="{# mp3Url #}" />
+<meta property="og:audio:secure_url" content="{# mp3Url | replace({'http':'https'}) #}" />
+<meta property="og:audio:type" content="audio/mp3" /-->
+{# endif #}
+
+<!-- Metadata tags for Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@retrorewindpod">
+<meta name="twitter:creator" content="@fxruizx">
+<meta name="twitter:title" content="{{ page.title }}{% if page.header.epNum %} :: {{ site.title }} #{{ page.header.epNum }}{% endif %}" />
+<meta name="twitter:description" content="{% if page.header.epNum  %}{{ page.summary() | replace({ '<p>':'','</p>':''}) }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}" />
+<meta name="twitter:image" content="{{ uri.base }}{{ coverImg.url }}" />

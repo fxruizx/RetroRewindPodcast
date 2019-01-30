@@ -1,0 +1,46 @@
+title: Podcast Episodes
+'@extends':
+  type: default
+  context: blueprints://pages
+    
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      
+      fields: 
+        podcast_fields:
+          type: tab
+          title: Podcast Fields
+      
+          fields:
+            header.shortTitle:
+              type: text
+              style: horizontal
+              label: Short Title
+              
+            header.epNum:
+              type: number
+              style: horizontal
+              label: Episode Number
+              validate:
+                required: false
+                type: int
+                
+            header.enclosure:
+              type: text
+              style: horizontal
+              label: Enclosure tag
+              
+            header.timestamps:
+              type: array
+              label: Time Stamps
+              placeholder_key: Time Code (HH:MM:SS)
+              placeholder_value: What happened at this time?
+              default: ['ROUNDTABLE: We play the <a href="">TV spot for </a> and give an overview of the technical specs of this film',
+                        'LIKES: The aspects of ',
+                        'SOCIALIZE: Feedback on  from our listeners via Facebook Group, Twitter, and Instagram',
+                        'DISLIKES: Elements of this ',
+                        'FINAL RATING:',
+                        'FEEDBACK & ANNOUNCEMENTS: Show announcements, and how to contact us']

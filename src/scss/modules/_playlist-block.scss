@@ -1,0 +1,57 @@
+/**
+ * Container for elements in a playlist type listing
+ * Block level element of BEM
+ * Will contain elements for: listing
+ * Can be reused in multiple areas, scaled by parent of .playlist-block
+ */
+.playlist-block{
+    & h1{ 
+        color: $pcolor-shade-lg;
+        font-size: $base-font-size; 
+        word-spacing: -.5em;
+    }
+    
+    & ul{
+        @extend %make-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+        li{
+            @extend %make-flex;
+            align-items: center;
+            border-bottom: .1em solid #ddd;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: $base-line-height*.5 0;
+            
+            &:last-child{ border-bottom: none; }
+            
+            a, span{ 
+                display: inline-block; 
+                flex: 1; 
+            }
+            
+            a{ border: none; }
+                
+            a:nth-child(3n){ flex: 10 }
+            a:last-child{
+                align-self: center;
+            }
+            
+            img{ 
+                margin: 0 $base-line-height*.25;
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    &__play-btn{
+        @extend .ep-intro-block__play-btn;
+        
+        svg{
+            position: relative;
+            top: 0;
+            fill: $primary-color;
+        }
+    }
+}

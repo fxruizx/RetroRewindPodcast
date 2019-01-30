@@ -1,0 +1,49 @@
+/*
+ * Responsive styles are applied to ep-intro-block classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: $mob-desk-break){
+    
+    /*
+     * Change flex direction so that title/description/links appear to 
+     *   right of cover art image
+     */
+    .ep-intro-block{
+        margin: 0 auto;
+        width: 100%;
+        
+        &__web-player{ 
+            flex: 1;
+            margin: 0 auto; 
+        }
+        
+        &__cover-art{ 
+            top: -26%; 
+            left: 0;
+            max-width: 100%;
+        }
+        
+        &__copy-links{
+            margin: 0 auto 0 2%;
+            
+            h1,ul{ text-align: left; }
+            ul{ flex-direction: column; }
+            p{ padding: 0; }
+            span{ display: inline; } 
+        }
+    }
+
+    /**
+     * Special instance of .ep-intro-block
+     * When instance is in .page-feature, make copy links appear to left on non-mobile displays
+     */
+    .page-feature .ep-intro-block{ flex-direction: row; }
+    
+    /**
+     * Special instance of .ep-intro-block
+     * When instance is in .sub-feature, make copy links appear to left on non-mobile displays
+     */
+    .sub-feature .ep-intro-block{ 
+        flex-direction: column; 
+        max-width: 200px;
+    }
+}

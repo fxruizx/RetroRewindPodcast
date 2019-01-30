@@ -1,0 +1,25 @@
+/** 
+ * CSS Transistion animation setup
+ * The element will slide in from the left side of the screen
+ * Element will cover 85% of screen when 'slider__from-left--transistion' class is put on element
+ */
+.slider__from-left{
+   display: none;
+   left: -85%;
+   transition: left .35s ease; 
+   
+   &--transition{ display: flex; left: 0; }
+}
+
+/** 
+ * CSS Transistion animation setup
+ * The element will slide in from the right side of the screen
+ * Element will cover 85% of screen when 'slider__from-right--transistion' class is put on element
+ */
+.slider__from-right{
+   display: none;
+   right: -85%;
+   transition: right .35s ease; 
+   
+   &--transition{ display: flex; right: 0; }
+}

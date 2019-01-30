@@ -1,0 +1,80 @@
+/**
+ * Container for embedding social media elements
+ * Block level element of BEM
+ * Will contain elements for: 
+ */
+.social-block{
+    flex: 1;
+    text-align: center;
+    h1{
+        font-family: $copy-font-fam;
+        font-size: 1em;
+        margin: 0.4em 0;
+        word-spacing: 0;
+    }
+    
+    &__youtube-feed{ 
+        flex: 3; 
+        margin-bottom: $base-line-height*.5;
+        text-align: left;
+    }
+    
+    &__youtube-container{
+        /**
+         * Following code is for making the youtube embed iframe, responsive
+         * Adapted from https://benmarshall.me/responsive-iframes/
+         */
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        
+        iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .instagram-feed{ 
+        @extend %make-flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        text-align: left;
+        
+        li{ 
+            padding: 0 .5%; 
+            width: 48%;
+            margin-bottom: 9.75%;
+            
+            a{ border-bottom: 0; }
+        }
+        
+        /*li:first-child{ 
+            padding-left: 0; 
+            padding-right: .5%;
+        }*/
+        
+        //li:nth-child(2n+1){ padding-right: .5%; }
+        //li:nth-child(2n+0){ padding-left: .5%; }
+        
+        img{
+            height: auto;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/**
+ * Container for containing .social-block blocks
+ */
+.social-buttons-block{
+    @extend %make-flex;
+    .social-block, .social-block:first-child, .social-block:nth-child(2n+2){ padding: 0; }
+    a{ width: 100%; }
+}

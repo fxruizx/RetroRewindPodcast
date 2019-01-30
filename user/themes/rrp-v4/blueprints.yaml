@@ -1,0 +1,24 @@
+name: RRPv4
+version: 0.1.5
+description: 'Theme for the 4th version of the Retro Rewind Podcast site'
+icon: podcast
+author:
+  name: Francisco Ruiz
+  email: fxruiz@outlook.com
+homepage: https://fxrdesign.com
+keywords: grav, podcast, etc
+
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

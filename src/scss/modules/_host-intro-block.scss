@@ -1,0 +1,45 @@
+/**
+ * Container for elements introducing hosts of a given episode
+ * Block level element of BEM
+ * Will contain elements for: host art, name, social links
+ * Can be reused in multiple areas, scaled by parent of .host-intro-block
+ */
+.host-intro-block{
+    @extend .ep-intro-block;
+    width: auto;
+    
+    &__art-wrap{ 
+        @extend .ep-intro-block__web-player;
+        box-shadow: none;
+        margin: $base-line-height auto $base-line-height*(-0.5) auto;
+        width: 75%;
+    }
+    
+    &__host-art{
+        @extend .ep-intro-block__cover-art;
+        border-radius: 100em;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    &__copy-links{
+        @extend .ep-intro-block__copy-links;
+        
+        h1{ margin-bottom: 0; }
+    }
+    
+    /**
+     * Styles if only two hosts are on the show
+     */
+    &__--2-hosts{ margin: 0; }
+}
+
+/** 
+ * Special styles for when .host-intro-block is in .sub-feature
+ */
+.sub-feature{
+    .host-intro-block{
+        &__copy-links{ text-align: center; }
+    }
+}

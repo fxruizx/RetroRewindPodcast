@@ -1,0 +1,19 @@
+/**
+ * Styles for ep-intro-block when within 
+ *  .content or .related content from _header-wrapper-footer.scss
+ */
+.content, .related-content{
+    .ep-intro-block{
+        @extend %dark-text-on-light;
+        flex-direction: row;
+        
+        h3{ 
+            font-size: $medium-font-size; 
+            line-height: $base-line-height*1.5;
+        }
+        h3, ul{ 
+            text-align: center;
+            word-spacing: 0;
+        }
+    }
+}

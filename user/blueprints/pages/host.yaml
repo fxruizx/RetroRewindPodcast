@@ -1,0 +1,61 @@
+title: Podcast Hosts
+'@extends':
+  type: default
+  context: blueprints://pages
+    
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      
+      fields: 
+        host_fields:
+          type: tab
+          title: Host Info
+      
+          fields:
+            header.hostRank:
+              type: text
+              style: horizontal
+              label: Rank
+              
+            header.hostSocialMediaImage:
+              type: text
+              style: horizontal
+              label: URL of Image on Social Media
+              
+            header.hostFacebook:
+              type: text
+              style: horizontal
+              label: Facebook Name/ID
+                
+            header.hostTwitter:
+              type: text
+              style: horizontal
+              label: Twitter Name
+            
+            header.hostYouTube:
+              type: text
+              style: horizontal
+              label: 'YouTube Channel/User ID'
+              
+            header.hostInstagram:
+              type: text
+              style: horizontal
+              label: Instagram Name
+              
+            header.hostEmail:
+              type: email
+              style: horizontal
+              label: Email Address
+              
+            header.hostWebsite:
+              type: text
+              style: horizontal
+              label: Website URL
+              
+            header.hostPromoting:
+              type: text
+              style: horizontal
+              label: Promoting URL

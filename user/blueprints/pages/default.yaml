@@ -1,0 +1,26 @@
+title: Gallery
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+          
+          fields:  
+            header.ctaText:
+              type: text
+              style: vertical
+              label: Call To Action Text
+              
+            header.ctaURL:
+              type: text
+              style: vertical
+              label: Call To Action URL

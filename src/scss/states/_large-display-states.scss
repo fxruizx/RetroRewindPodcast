@@ -1,0 +1,36 @@
+/*
+ * Responsive styles are applied to several layout and block classes
+ *   when display is larger than $desk-xl-break wide
+ */
+
+/* 
+ * Percentage used for outer margins of overall layout at large displays
+ */
+$outer-margins-single: 15%;
+$outer-margin: ($outer-margins-single/(100% - $outer-margins-single*2))*100%;
+//(100% - $outer-margins-single*2)/$outer-margins-single
+
+
+
+@media (min-width: $desk-xl-break){
+    .wrapper{
+        margin-left: $outer-margins-single;
+        margin-right: $outer-margins-single;
+    }
+    
+    .site-header, .page-feature{
+        margin-left: -$outer-margin;
+        margin-right: -$outer-margin;
+        padding-left: $outer-margin;
+        padding-right: $outer-margin;
+        left: 0;
+        right: 0;
+    }
+    
+    .fix-to-top{
+        margin-left: 0;
+        padding-left: $outer-margins-single;
+        padding-right: $outer-margins-single;
+        margin-right: 0;
+    }
+}

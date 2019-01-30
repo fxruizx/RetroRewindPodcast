@@ -1,0 +1,29 @@
+{% set mp3Url = page.header.enclosure | split('"') | slice(1,1) | first %}
+
+<article class="ep-intro-block">
+    <div class="ep-intro-block__web-player">
+        {% set coverImg = page.media.images|first %}
+        {{ coverImg.html(page.title,page.title,'ep-intro-block__cover-art') }}
+    
+        <div class="ep-intro-block__audio-fill jQ-audio">
+            <audio preload="none">
+                Your browser does not support the <code>audio</code> element.  
+                <source src='{{ mp3Url }}' type='audio/mp3'>
+            </audio>
+            <span class="ep-intro-block__play-btn jQ-audio-btn">
+                <svg viewBox="-1150 -1150 4000 4000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="ep-intro-block__copy-links">
+        <h1><small>RRP #{{ page.header.epNum }}</small><br/>{{ page.title }}</h1>
+        <p class="hide-mobile">{{ page.summary }}</p>
+        <ul>
+            <li><h3><a href="{{ page.header.enclosure | split('"') | slice(1,1) | first }}"><i class="fa fa-download" aria-hidden="true"></i> Download MP3</a></h3></li>
+            <li><h3><a href="{{ base_url_relative }}/patreon"><i class="fa fa-money" aria-hidden="true"></i> Support us on Patreon</a></h3></li>
+        </ul>
+    </div>
+    
+</article>

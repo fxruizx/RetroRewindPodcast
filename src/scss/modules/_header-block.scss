@@ -1,0 +1,115 @@
+/**
+ * Styles for the elements that go in the site header
+ * Below styles are created with "mobile-first" approach
+ * For tablet/desktop styles, see "../scss/states" 
+ * Class header-block is the Block of the BEM heiarchy
+ */
+.header-block{
+    @extend %make-flex;
+    flex: 1;
+    align-items: center;
+    
+    
+    a{ border-bottom: 0px; }
+    
+    /**
+     * Styles for RRP live text logo in header
+     * Class header-block__logo is the Element of the BEM heiarchy
+     */
+    &__logo{
+        @extend %make-header-anchor-color;
+        font-family: $heading-font-fam;
+        line-height: $base-line-height*.8;
+        text-shadow: .1em .1em 0 $primary-color;
+        //padding-top:.3em;
+        text-align: center;
+    }
+    
+    /**
+     * Styles for the icons in the site header
+     * Icon is used as link to tap and expand hidden sections
+     * Class header-block__mobile-icon is the Element of the BEM heiarchy
+     */
+    &__mobile-icon{ @extend %make-header-anchor-color; }
+    
+    /**
+     * Styles for the navigation menu when expanded after clicking menu icon
+     * Class header-block__menu is the Element of the BEM heiarchy
+     */
+    &__menu{
+        @extend %make-header-anchor-color;
+        background-color: $pcolor-shade-md;
+        background: linear-gradient(to left, rgb(25, 0, 0) 0%, rgba(38,4,4,1) 40%, rgba(38,4,4,1) 100%);
+        color: $pcolor-tint-lg;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+        min-width: 85%;
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        
+        li{ padding: .5em 0 .5em $base-line-height; }
+        li:first-child{ margin: $base-line-height 0 0 0; padding-top: 0; } 
+    }
+    
+    /**
+     * Styles for the search when expanded after clicking search icon
+     * Extends the styles from header-block__menu
+     * Class header-block__form is the Element of the BEM heiarchy
+     */
+    &__form{
+        @extend .header-block__menu;
+        background: linear-gradient(to right, rgb(25, 0, 0) 0%, rgba(38,4,4,1) 40%, rgba(38,4,4,1) 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: $base-line-height;
+        
+        /**
+         * <form> styles within header-block__form
+         */
+        form{ 
+            @extend %make-flex;
+            flex-basis: 100%; 
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+    
+    /**
+     * Search field <input> styles within header-block__form form
+     */
+    &__search-box{ 
+        border-radius: 0.25em;
+        border: none;
+        color: $pcolor-shade-lg;
+        flex: 14; 
+        height: $base-line-height; 
+        padding:0  $base-line-height*.25;
+    }
+    
+    /**
+     * Search submit button <input> styles within header-block__form form
+     */
+    &__search-submit{
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        flex: 1;
+        font-family: FontAwesome;
+        height: $base-line-height;
+        line-height: $base-line-height;
+        margin: 0 0 0 $base-line-height*.25;
+        padding: 0;
+        text-align: right;
+    }
+    
+    /**
+     * Change last headerblock/search box to be right justified
+     */
+    &:last-child{
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,36 @@
+{% extends 'partials/base.html.twig' %}
+
+{# Create collection dynamically to be able to pull host's episode appearences #}
+{% set hostEpCollection = page.evaluate([{ '@taxonomy.hosts': page.title }]).order('date','desc') %}
+
+{% block header %}
+    <!-- HEADER INCLUDES GLOBAL NAVIGATION -->
+    {% include 'partials/header.html.twig' %}
+{% endblock %}
+{% block body %}
+    <section class="page-feature">
+        <!-- PAGE'S EPISODE IS SHOWN AS THE FEATURE HERE -->
+        {% include 'partials/selected-host.html.twig' %}
+    </section>
+    <section class="sub-feature">
+        <h1>Connect with {{ page.title | split(' ') | first }}</h1>
+        <div class="icon-group">
+        {% if page.header.hostFacebook %} <span><a alt="Facebook" title="Facebook" href="http://facebook.com/{{ page.header.hostFacebook }}"><i class="fa fa-facebook-square"></i></a></span> {%endif %}
+        {% if page.header.hostInstagram %} <span><a alt="Instagram" title="Instagram" href="http://instagram.com/{{ page.header.hostInstagram }}"><i class="fa fa-instagram"></i></a></span> {%endif %} 
+        {% if page.header.hostTwitter %} <span><a alt="Twitter" title="Twitter" href="http://twitter.com/{{ page.header.hostTwitter }}"><i class="fa fa-twitter-square"></i></a></span> {%endif %}
+        {% if page.header.hostYouTube %} <span><a alt="YouTube" title="YouTube" href="http://youtube.com/{{ page.header.hostYouTube }}"><i class="fa fa-youtube-square"></i></a></span> {%endif %} 
+        {% if page.header.hostEmail %} <span><a alt="Email" title="Email" href="mailto://{{ page.header.hostEmail }}"><i class="fa fa-envelope-square"></i></a></span> {%endif %}
+        {% if page.header.hostWebsite %} <span><a alt="Website" title="Website" href="{{ page.header.hostWebsite }}"><i class="fa fa-globe"></i></a></span> {%endif %}
+        {% if page.header.hostPromoting %} <span><a alt="Promoting" title="Promoting" href="{{ page.header.hostPromoting }}"><i class="fa fa-bullhorn"></i></a></span> {%endif %}
+        </div>
+    </section>
+    <section class="content basic-vpadding">
+        <h1>{{ hostEpCollection | length }} Episodes with {{ page.title | split(' ') | first }}</h1>
+        <!-- DISPLAY TABLE OF EPISODES -->
+        {% include 'partials/listing-table.html.twig' %}
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,1653 @@
+@import 'http://yui.yahooapis.com/pure/0.6.0/pure-min.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=PT+Sans|Press+Start+2P");
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+/* Core Stuff */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #606d6e; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #454B4D; }
+
+a {
+  color: #1F8CD6;
+  text-decoration: none; }
+
+a:hover {
+  color: #175E91; }
+
+pre {
+  background: #F0F0F0;
+  margin: 1rem 0;
+  border-radius: 2px; }
+
+blockquote {
+  border-left: 10px solid #eee;
+  margin: 0;
+  padding: 0 2rem; }
+
+/* Utility Classes */
+.wrapper {
+  margin: 0 3rem; }
+
+.padding {
+  padding: 3rem 1rem; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+/* Content Styling */
+.header .padding {
+  padding: 1rem 0; }
+
+.header {
+  background-color: #1F8DD6;
+  color: #eee; }
+
+.header a {
+  color: #fff; }
+
+.header .logo {
+  font-size: 1.7rem;
+  text-transform: uppercase; }
+
+.footer {
+  background-color: #eee; }
+
+/* Menu Settings */
+.main-nav ul {
+  text-align: center;
+  letter-spacing: -1em;
+  margin: 0;
+  padding: 0; }
+
+.main-nav ul li {
+  display: inline-block;
+  letter-spacing: normal; }
+
+.main-nav ul li a {
+  position: relative;
+  display: block;
+  line-height: 45px;
+  color: #fff;
+  padding: 0 20px;
+  white-space: nowrap; }
+
+.main-nav > ul > li > a {
+  border-radius: 2px; }
+
+/*Active dropdown nav item */
+.main-nav ul li:hover > a {
+  background-color: #175E91; }
+
+/* Selected Dropdown nav item */
+.main-nav ul li.selected > a {
+  background-color: #fff;
+  color: #175E91; }
+
+/* Dropdown CSS */
+.main-nav ul li {
+  position: relative; }
+
+.main-nav ul li ul {
+  position: absolute;
+  background-color: #1F8DD6;
+  min-width: 100%;
+  text-align: left;
+  z-index: 999;
+  display: none; }
+
+.main-nav ul li ul li {
+  display: block; }
+
+/* Dropdown CSS */
+.main-nav ul li ul ul {
+  left: 100%;
+  top: 0; }
+
+/* Active on Hover */
+.main-nav li:hover > ul {
+  display: block; }
+
+/* Child Indicator */
+.main-nav .has-children > a {
+  padding-right: 30px; }
+
+.main-nav .has-children > a:after {
+  font-family: FontAwesome;
+  content: '\f107';
+  position: absolute;
+  display: inline-block;
+  right: 8px;
+  top: 0; }
+
+.main-nav .has-children .has-children > a:after {
+  content: '\f105'; }
+
+/**
+ * Primary Color is a slightly burned red.
+ */
+/**
+ * Shades of the Primary Color 
+ * sm is slightly darker
+ * lg is much darker
+ */
+/**
+ * Tints of the Primary Color
+ * sm is slightly lighter
+ * lg is much lighter
+ */
+/**
+ * Secondary Color is a dark grey.
+ */
+/**
+ * Importing google fonts
+ * PT Sans is for general copy
+ * Press Start 2P is for display headings
+ */
+/**
+ * The standard font size is 1em at 100%
+ */
+/**
+ * The standard baseline or line height is 1.6em
+ */
+/**
+ * <html> and <body> reset to have 0 margin and padding
+ */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Colors and font styles set for <body> and <p> 
+ */
+body, p {
+  color: #222;
+  font-size: 100%;
+  font-family: PT Sans, sans-serif;
+  line-height: 1.6em; }
+
+/**
+ * <h1> font size set to 262% of normal
+ * <h1> font face is set to $heading-font-fam
+ */
+h1 {
+  font-size: 2.62em;
+  font-family: "Press Start 2P", sans-serif; }
+
+/**
+ * <ul> reset to have no bullets and not indentaion
+ */
+ul {
+  list-style: none;
+  padding: 0; }
+
+/**
+ * <a> reset to have no underline
+ */
+a, a:hover, a:active {
+  text-decoration: none; }
+
+h1 a, h1 a:hover, h2 a, h2 a:hover, h3 a, h3 a:hover, h4 a, h4 a:hover, h5 a, h5 a:hover, h6 a, h6 a:hover, li a, li a:hover, p a, p a:hover {
+  border-bottom: .04em dotted;
+  padding-bottom: 0em; }
+
+small {
+  font-size: .62em; }
+
+/**
+ * Turn an element into a Flexbox element
+ */
+.icon-group, .wrapper, .site-header, .site-footer, .page-feature__--heading-only, .sub-feature ul, .sub-feature__--cta-only ul, .tagline-ribbon ul, .social-connect ul, .sub-feature__--cta-only, .related-content ul, .header-block, .header-block__form form, .ep-intro-block, .host-intro-block, .ep-intro-block__play-btn, .playlist-block__play-btn, .playlist-block ul, .playlist-block ul li, .timestamps-block, .timestamps-block__timestamp, .contact-block, .social-block .instagram-feed, .social-buttons-block {
+  display: flex; }
+  .icon-group > *, .wrapper > *, .site-header > *, .site-footer > *, .page-feature__--heading-only > *, .sub-feature ul > *, .sub-feature__--cta-only ul > *, .tagline-ribbon ul > *, .social-connect ul > *, .sub-feature__--cta-only > *, .related-content ul > *, .header-block > *, .header-block__form form > *, .ep-intro-block > *, .host-intro-block > *, .ep-intro-block__play-btn > *, .playlist-block__play-btn > *, .playlist-block ul > *, .playlist-block ul li > *, .timestamps-block > *, .timestamps-block__timestamp > *, .contact-block > *, .social-block .instagram-feed > *, .social-buttons-block > * {
+    box-sizing: border-box; }
+
+/**
+ * Make anchor links in header/nav, in different Blocks, have consistent coloring
+ */
+.header-block__logo a, .header-block__mobile-icon a, .header-block__menu a, .header-block__form a {
+  color: white; }
+
+.header-block__logo a:hover, .header-block__mobile-icon a:hover, .header-block__menu a:hover, .header-block__form a:hover {
+  color: #e72929; }
+
+/**
+ * Colors for text in dark (black or red areas)
+ * Not meant to be applied to <a> tags themselves
+ */
+.page-feature, .page-feature__--heading-only, .sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect, .site-footer {
+  color: white; }
+  .page-feature a, .page-feature__--heading-only a, .sub-feature a, .sub-feature__--cta-only a, .tagline-ribbon a, .social-connect a, .site-footer a {
+    border-bottom-color: #e72929;
+    color: white; }
+    .page-feature a:hover, .page-feature__--heading-only a:hover, .sub-feature a:hover, .sub-feature__--cta-only a:hover, .tagline-ribbon a:hover, .social-connect a:hover, .site-footer a:hover {
+      border-bottom-color: white; }
+
+/**
+ * Colors for text in light (white areas)
+ * Not meant to be applied to <a> tags themselves
+ */
+.content, .related-content, .content .ep-intro-block, .related-content .ep-intro-block, .content .host-intro-block, .related-content .host-intro-block, .timestamps-block {
+  color: black; }
+  .content a, .related-content a, .content .ep-intro-block a, .related-content .ep-intro-block a, .content .host-intro-block a, .related-content .host-intro-block a, .timestamps-block a {
+    color: #c71616; }
+    .content a:hover, .related-content a:hover, .timestamps-block a:hover {
+      color: 0.1em dotted #e72929; }
+
+/** 
+ * CSS Transistion animation setup
+ * The element will slide in from the left side of the screen
+ * Element will cover 85% of screen when 'slider__from-left--transistion' class is put on element
+ */
+.slider__from-left {
+  display: none;
+  left: -85%;
+  transition: left .35s ease; }
+  .slider__from-left--transition {
+    display: flex;
+    left: 0; }
+
+/** 
+ * CSS Transistion animation setup
+ * The element will slide in from the right side of the screen
+ * Element will cover 85% of screen when 'slider__from-right--transistion' class is put on element
+ */
+.slider__from-right {
+  display: none;
+  right: -85%;
+  transition: right .35s ease; }
+  .slider__from-right--transition {
+    display: flex;
+    right: 0; }
+
+/**
+ * Hide elements at mobile sizes
+ */
+.hide-mobile {
+  display: none; }
+
+/**
+ * Remove bold off elements that are normally bold
+ */
+.unbold {
+  font-weight: normal; }
+
+/**
+ * Center the text within the element
+ */
+.center-text {
+  text-align: center; }
+
+/**
+ * Fix an elements position to top
+ */
+.fix-to-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3000; }
+
+/**
+ * Styles for a group of icons in a list
+ */
+.icon-group {
+  font-size: 2em;
+  justify-content: center;
+  margin-bottom: 0.4em; }
+  .icon-group span {
+    flex: 1;
+    padding: 0 0.4em;
+    text-align: center; }
+
+/**
+ * Hide the title for ranker.com voting list
+ */
+.rnkrw-lists .rnkrwHead {
+  display: none; }
+
+/**
+ * Class to add when opacity transition is triggered 
+ *  i.e. from .ep-intro-blocl__cover-art--to-fade
+ */
+.fade-out {
+  opacity: 0 !important; }
+
+.basic-vpadding {
+  padding: 1.6em 0 !important; }
+
+.basic-vpadding-btm, .archivelist-block {
+  padding-bottom: 1.6em !important; }
+
+/**
+ * Wrapper for all the site elements 
+ */
+.wrapper {
+  flex-direction: column;
+  margin: 1.6em 1.6em 0 1.6em;
+  padding: 4.4em 0 0 0; }
+
+/**
+ * Class for <header>
+ * Contains header-block module elements 
+ */
+.site-header, .site-footer {
+  background-color: black;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  padding: 0.8em 1.6em;
+  margin: 0 -1.6em -1.6em -1.6em; }
+
+/**
+ * Class for section below the header where latest episode or 
+ *   intro for single episodes is shown
+ *   Contains ep-intro-block elements
+ */
+.page-feature, .page-feature__--heading-only, .sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect {
+  flex: 1;
+  background-color: #540909;
+  margin: -1.872em -1.6em 0 -1.6em;
+  padding: 0;
+  height: auto; }
+
+/**
+ * Class for section below the header when there is only a headline
+ *   Contains h1 elements
+ */
+.page-feature__--heading-only {
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.6em; }
+  .page-feature__--heading-only h1 {
+    color: white;
+    font-family: PT Sans, sans-serif;
+    line-height: 1;
+    text-align: center; }
+
+/**
+ * Class for section below the feature area and above the content area
+ * Utilized for most popular episodes and hosts for single episode pages
+ * Contains ep-intro-block elements
+ */
+.sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect {
+  background-color: #911;
+  margin-top: 0;
+  padding: 0.8em 1.6em;
+  /**
+     * Title of the sub-feature section
+     */
+  /**
+     * The listing of elements in the sub-feature
+     * Planned to contain ep-intro-blocks and host-blocks
+     */ }
+  .sub-feature h1, .sub-feature__--cta-only h1, .tagline-ribbon h1, .social-connect h1 {
+    color: white;
+    font-size: 1em;
+    word-spacing: -.5em; }
+  .sub-feature ul, .sub-feature__--cta-only ul, .tagline-ribbon ul, .social-connect ul {
+    justify-content: center; }
+    .sub-feature ul li:first-child, .sub-feature__--cta-only ul li:first-child, .tagline-ribbon ul li:first-child, .social-connect ul li:first-child {
+      margin-left: 0;
+      padding-right: 2%; }
+    .sub-feature ul li:nth-child(2n+2), .sub-feature__--cta-only ul li:nth-child(2n+2), .tagline-ribbon ul li:nth-child(2n+2), .social-connect ul li:nth-child(2n+2) {
+      padding: 0 1%; }
+    .sub-feature ul li:last-child, .sub-feature__--cta-only ul li:last-child, .tagline-ribbon ul li:last-child, .social-connect ul li:last-child {
+      margin-right: 0;
+      padding-left: 2%; }
+    .sub-feature ul li h1, .sub-feature__--cta-only ul li h1, .tagline-ribbon ul li h1, .social-connect ul li h1 {
+      font-size: 1em;
+      margin: 0.4em 0;
+      word-spacing: 0; }
+
+/**
+ * Class for section below the page-feature when there is only a cta button
+ *   Contains h1 elements
+ */
+.sub-feature__--cta-only {
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0; }
+
+/**
+ * Tagline styles for a ribbon that only appears on the homepage layout at this point
+ */
+.tagline-ribbon {
+  background-color: #3F0909;
+  box-shadow: inset 0 2px 5px #340000;
+  color: #e72929;
+  font-size: 1.31em;
+  padding-bottom: 1.6em;
+  padding-top: 1.6em;
+  text-align: center; }
+
+/**
+ * Class for section of the content area (below feature and sub-feature)
+ * Utilized for show notes or other content to be mostly read
+ */
+.content, .related-content {
+  flex: 7;
+  padding: 1.6em 0 0 0; }
+  .content h1, .related-content h1 {
+    color: black;
+    font-size: 1em;
+    word-spacing: -.5em; }
+
+/**
+ * Class for section of the related content area (below content on episode pages)
+ * Utilized for dynamically generated related episodes
+ */
+.related-content {
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 1.6em; }
+  .related-content ul {
+    flex-direction: row;
+    justify-content: center; }
+
+/**
+ * Class for section of social media/connect with us
+ * Utilized for YouTube, Instagram, Twitter embeds
+ */
+.social-connect {
+  background-color: #540909;
+  flex: 1; }
+  .social-connect ul {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto; }
+    .social-connect ul li {
+      padding: 0; }
+    .social-connect ul li:last-child {
+      padding-left: 0; }
+    .social-connect ul li:nth-child(2n+2) {
+      padding-right: 0; }
+
+/**
+ * Class for <footer>
+ * Contains footer-block module elements 
+ */
+.site-footer {
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 0;
+  height: 100%;
+  min-height: 100%; }
+
+/**
+ * Styles for the elements that go in the site header
+ * Below styles are created with "mobile-first" approach
+ * For tablet/desktop styles, see "../scss/states" 
+ * Class header-block is the Block of the BEM heiarchy
+ */
+.header-block {
+  flex: 1;
+  align-items: center;
+  /**
+     * Styles for RRP live text logo in header
+     * Class header-block__logo is the Element of the BEM heiarchy
+     */
+  /**
+     * Styles for the icons in the site header
+     * Icon is used as link to tap and expand hidden sections
+     * Class header-block__mobile-icon is the Element of the BEM heiarchy
+     */
+  /**
+     * Styles for the navigation menu when expanded after clicking menu icon
+     * Class header-block__menu is the Element of the BEM heiarchy
+     */
+  /**
+     * Styles for the search when expanded after clicking search icon
+     * Extends the styles from header-block__menu
+     * Class header-block__form is the Element of the BEM heiarchy
+     */
+  /**
+     * Search field <input> styles within header-block__form form
+     */
+  /**
+     * Search submit button <input> styles within header-block__form form
+     */
+  /**
+     * Change last headerblock/search box to be right justified
+     */ }
+  .header-block a {
+    border-bottom: 0px; }
+  .header-block__logo {
+    font-family: "Press Start 2P", sans-serif;
+    line-height: 1.28em;
+    text-shadow: 0.1em 0.1em 0 #911;
+    text-align: center; }
+  .header-block__menu, .header-block__form {
+    background-color: #260404;
+    background: linear-gradient(to left, #190000 0%, #260404 40%, #260404 100%);
+    color: white;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    min-width: 85%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000; }
+    .header-block__menu li, .header-block__form li {
+      padding: 0.5em 0 0.5em 1.6em; }
+    .header-block__menu li:first-child, .header-block__form li:first-child {
+      margin: 1.6em 0 0 0;
+      padding-top: 0; }
+  .header-block__form {
+    background: linear-gradient(to right, #190000 0%, #260404 40%, #260404 100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 1.6em;
+    /**
+         * <form> styles within header-block__form
+         */ }
+    .header-block__form form {
+      flex-basis: 100%;
+      justify-content: flex-end;
+      width: 100%; }
+  .header-block__search-box {
+    border-radius: 0.25em;
+    border: none;
+    color: black;
+    flex: 14;
+    height: 1.6em;
+    padding: 0 0.4em; }
+  .header-block__search-submit {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    flex: 1;
+    font-family: FontAwesome;
+    height: 1.6em;
+    line-height: 1.6em;
+    margin: 0 0 0 0.4em;
+    padding: 0;
+    text-align: right; }
+  .header-block:last-child {
+    justify-content: flex-end; }
+
+/**
+ * Container for elements introducing the episode
+ * Block level element of BEM
+ * Will contain elements for: episode cover art, player, title, number, quick links
+ * Can be reused in multiple areas, scaled by parent of .ep-intro-block
+ */
+.ep-intro-block, .host-intro-block {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0;
+  min-width: 100px;
+  width: 100%;
+  /**
+     * Styles for the feature image to help crop it to a square
+     */
+  /**
+     * Styles for main RRP coverart to fade out on homepage page-feature area
+     *  leaving the episode art - all when play button is clicked
+     */
+  /**
+     * Play Button styles for the icon that appears over the cover art
+     */
+  /**
+     * Stlyes for audio player in ep-intro-block__audio-fill
+     */
+  /**
+     * Styles for the copy and links in the episode intro block
+     * Assumes that that ep-intro-blocks are only on non-light backgrounds
+     */ }
+  .ep-intro-block__web-player, .host-intro-block__art-wrap {
+    box-shadow: 0px -1px 10px 0px #540909;
+    display: inline-block;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    flex: 2;
+    margin: 0 auto;
+    min-width: 100px;
+    width: 100%;
+    /**
+         * This :after pseudo class is what forces the div containing the image
+         *   to expand and show the image, otherwise it will collapse and the 
+         *   image with be hidden
+         */ }
+    .ep-intro-block__web-player:after, .host-intro-block__art-wrap:after {
+      padding-top: 100%;
+      display: block;
+      content: ''; }
+  .ep-intro-block__cover-art, .host-intro-block__host-art {
+    border: 0;
+    position: absolute;
+    top: -34%;
+    left: -3.5%;
+    height: auto;
+    max-width: 107%;
+    margin: 0;
+    padding: 0;
+    z-index: 100; }
+  .ep-intro-block__cover-art--to-fade {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+    z-index: 101; }
+  .ep-intro-block__play-btn, .playlist-block__play-btn {
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    position: relative;
+    /**
+         * Play Icon styles
+         */ }
+    .ep-intro-block__play-btn:hover, .playlist-block__play-btn:hover {
+      border: none; }
+    .ep-intro-block__play-btn svg, .playlist-block__play-btn svg, .ep-intro-block__play-btn i, .playlist-block__play-btn i {
+      fill: rgba(255, 255, 255, 0.75);
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 100%;
+      z-index: 200; }
+  .ep-intro-block__audio-fill audio {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1500; }
+  .ep-intro-block__copy-links, .host-intro-block__copy-links {
+    flex: 1;
+    min-width: 100px; }
+    .ep-intro-block__copy-links h1, .host-intro-block__copy-links h1, .ep-intro-block__copy-links p, .host-intro-block__copy-links p, .ep-intro-block__copy-links a, .host-intro-block__copy-links a {
+      color: white; }
+    .ep-intro-block__copy-links h1, .host-intro-block__copy-links h1 {
+      font-family: PT Sans, sans-serif;
+      font-weight: normal;
+      line-height: 1;
+      margin-top: 0; }
+    .ep-intro-block__copy-links small, .host-intro-block__copy-links small {
+      color: #e72929;
+      display: inline-block;
+      font-size: .5em;
+      line-height: 1.25;
+      margin: .5em 0 .2em 0; }
+    .ep-intro-block__copy-links h3, .host-intro-block__copy-links h3 {
+      font-size: 1em;
+      margin: 0; }
+    .ep-intro-block__copy-links ul, .host-intro-block__copy-links ul {
+      list-style: none; }
+    .ep-intro-block__copy-links li, .host-intro-block__copy-links li {
+      display: inline-block;
+      padding: 0 0.4em 0 0; }
+
+/**
+ * Special instance of .ep-intro-block
+ * When instance is in .page-feature, add margin around container and no max width
+ */
+.page-feature .ep-intro-block, .page-feature__--heading-only .ep-intro-block, .sub-feature .ep-intro-block, .sub-feature__--cta-only .ep-intro-block, .tagline-ribbon .ep-intro-block, .social-connect .ep-intro-block, .page-feature .host-intro-block, .page-feature__--heading-only .host-intro-block, .sub-feature .host-intro-block, .sub-feature__--cta-only .host-intro-block, .tagline-ribbon .host-intro-block, .social-connect .host-intro-block {
+  max-width: none; }
+
+.page-feature .ep-intro-block__copy-links, .page-feature__--heading-only .ep-intro-block__copy-links, .sub-feature .ep-intro-block__copy-links, .sub-feature__--cta-only .ep-intro-block__copy-links, .tagline-ribbon .ep-intro-block__copy-links, .social-connect .ep-intro-block__copy-links, .page-feature .host-intro-block__copy-links, .page-feature__--heading-only .host-intro-block__copy-links, .sub-feature .host-intro-block__copy-links, .sub-feature__--cta-only .host-intro-block__copy-links, .tagline-ribbon .host-intro-block__copy-links, .social-connect .host-intro-block__copy-links {
+  margin: 0.8em 1.6em; }
+
+/**
+ * Special instance of .ep-intro-block
+ * When instance is in .sub-feature, 
+ *   remove margin around container added by @extending .page-feature
+ */
+.sub-feature .ep-intro-block__copy-links, .sub-feature__--cta-only .ep-intro-block__copy-links, .tagline-ribbon .ep-intro-block__copy-links, .social-connect .ep-intro-block__copy-links, .sub-feature .host-intro-block__copy-links, .sub-feature__--cta-only .host-intro-block__copy-links, .tagline-ribbon .host-intro-block__copy-links, .social-connect .host-intro-block__copy-links {
+  margin: 0.8em 0.4em; }
+  .sub-feature .ep-intro-block__copy-links h1, .sub-feature__--cta-only .ep-intro-block__copy-links h1, .tagline-ribbon .ep-intro-block__copy-links h1, .social-connect .ep-intro-block__copy-links h1, .sub-feature .host-intro-block__copy-links h1, .sub-feature__--cta-only .host-intro-block__copy-links h1, .tagline-ribbon .host-intro-block__copy-links h1, .social-connect .host-intro-block__copy-links h1, .sub-feature .ep-intro-block__copy-links li, .sub-feature__--cta-only .ep-intro-block__copy-links li, .tagline-ribbon .ep-intro-block__copy-links li, .social-connect .ep-intro-block__copy-links li, .sub-feature .host-intro-block__copy-links li, .sub-feature__--cta-only .host-intro-block__copy-links li, .tagline-ribbon .host-intro-block__copy-links li, .social-connect .host-intro-block__copy-links li {
+    text-align: center; }
+
+/**
+ * Styles shared by all <a> styled as buttons
+ */
+a.button-block, a.button-block__light, a.tag-anchor__dark, a.button-block__dark, a.tag-anchor__light, .button-block, a.button-block__light, a.tag-anchor__dark, .button-block__light, .tag-anchor__dark, a.button-block__dark, a.tag-anchor__light, .button-block__dark, .tag-anchor__light {
+  border: none;
+  border-radius: .25em;
+  box-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  font-weight: bold;
+  margin: 0.8em auto;
+  padding: 0.4em 1.6em;
+  text-align: center;
+  /**
+     * Lignt version of the buttons, used on darker backgrounds
+     */
+  /**
+     * Dark version of the buttons, used on lighter backgrounds
+     */ }
+  a.button-block__light, a.tag-anchor__dark, .button-block__light, a.tag-anchor__dark, .tag-anchor__dark {
+    background-color: white;
+    color: #540909; }
+    a.button-block__light:hover, a.tag-anchor__dark:hover, .button-block__light:hover, .tag-anchor__dark:hover {
+      background-color: #540909;
+      border-bottom: none;
+      color: white;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+      padding-bottom: 0.4em; }
+  a.button-block__dark, a.tag-anchor__light, .button-block__dark, a.tag-anchor__light, .tag-anchor__light {
+    background-color: #911;
+    color: white; }
+    a.button-block__dark:hover, a.tag-anchor__light:hover, .button-block__dark:hover, .tag-anchor__light:hover {
+      background-color: #540909;
+      border-bottom: none;
+      color: white;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+      padding-bottom: 0.4em; }
+
+/**
+ * Dark version of anchors to mimic tags/small buttons
+ */
+a.tag-anchor__dark, .tag-anchor__dark {
+  /**
+     * Extend dark so that tags are not so visually dominant in light areas
+     */
+  border: 1px solid;
+  box-shadow: none;
+  font-size: 0.81em;
+  font-weight: normal;
+  padding: 0 .5em;
+  margin: 0.25em .05em; }
+
+/**
+ * Lignt version of anchors to mimic tags/small buttons
+ */
+a.tag-anchor__light, .tag-anchor__light {
+  /**
+     * Extend dark so that tags are not so visually dominant in light areas
+     */
+  border: 1px solid;
+  box-shadow: none;
+  font-size: 0.81em;
+  font-weight: normal;
+  padding: .2em .5em;
+  margin: 0 .15em; }
+
+a.tag-anchor__light:hover, .tag-anchor__light:hover, a.tag-anchor__dark:hover, .tag-anchor__dark:hover {
+  border-bottom: 1px solid;
+  padding-bottom: 0; }
+
+/**
+ * Container for elements in a playlist type listing
+ * Block level element of BEM
+ * Will contain elements for: listing
+ * Can be reused in multiple areas, scaled by parent of .playlist-block
+ */
+.playlist-block h1 {
+  color: black;
+  font-size: 1em;
+  word-spacing: -.5em; }
+
+.playlist-block ul {
+  flex-direction: column;
+  justify-content: flex-start; }
+  .playlist-block ul li {
+    align-items: center;
+    border-bottom: .1em solid #ddd;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8em 0; }
+    .playlist-block ul li:last-child {
+      border-bottom: none; }
+    .playlist-block ul li a, .playlist-block ul li span {
+      display: inline-block;
+      flex: 1; }
+    .playlist-block ul li a {
+      border: none; }
+    .playlist-block ul li a:nth-child(3n) {
+      flex: 10; }
+    .playlist-block ul li a:last-child {
+      align-self: center; }
+    .playlist-block ul li img {
+      margin: 0 0.4em;
+      vertical-align: middle; }
+
+.playlist-block__play-btn svg {
+  position: relative;
+  top: 0;
+  fill: #911; }
+
+/**
+ * Container for elements in a table listing
+ * Block level element of BEM
+ * Will contain elements for: tr, th, td
+ * Can be reused in multiple areas, but mainly content, scaled by parent of .archivelist-block
+ */
+.archivelist-block {
+  border-spacing: 0;
+  width: 100%; }
+  .archivelist-block tr {
+    border-bottom: .1em solid #ddd; }
+  .archivelist-block th, .archivelist-block td {
+    padding: 0.4em 0.8em;
+    text-align: left; }
+  .archivelist-block th {
+    font-size: 1.31em;
+    color: #911;
+    cursor: pointer;
+    /**
+         * Add ascending/descending arrows to table headers that are used for sorting
+         */ }
+    .archivelist-block th[aria-sort='descending']::after, .archivelist-block th[aria-sort='ascending']::after {
+      font-family: FontAwesome;
+      font-size: .7em;
+      margin-left: .5em;
+      color: #511; }
+    .archivelist-block th[aria-sort="descending"]::after {
+      content: '\f078'; }
+    .archivelist-block th[aria-sort="ascending"]::after {
+      content: '\f077'; }
+  .archivelist-block tbody > tr:last-child {
+    border-bottom: none; }
+  .archivelist-block__ep-title {
+    font-weight: bold; }
+
+/**
+ * Styles for ep-intro-block when within 
+ *  .content or .related content from _header-wrapper-footer.scss
+ */
+.content .ep-intro-block, .related-content .ep-intro-block, .content .host-intro-block, .related-content .host-intro-block, .related-content .ep-intro-block, .related-content .host-intro-block {
+  flex-direction: row; }
+  .content .ep-intro-block h3, .related-content .ep-intro-block h3, .content .host-intro-block h3, .related-content .host-intro-block h3, .related-content .ep-intro-block h3, .related-content .host-intro-block h3 {
+    font-size: 1.31em;
+    line-height: 2.4em; }
+  .content .ep-intro-block h3, .related-content .ep-intro-block h3, .content .host-intro-block h3, .related-content .host-intro-block h3, .content .ep-intro-block ul, .related-content .ep-intro-block ul, .content .host-intro-block ul, .related-content .host-intro-block ul, .related-content .ep-intro-block h3, .related-content .host-intro-block h3, .related-content .ep-intro-block ul, .related-content .host-intro-block ul {
+    text-align: center;
+    word-spacing: 0; }
+
+/**
+ * Container for elements in a timestamp/chapter list
+ * Block level element of BEM
+ * Will contain elements: &__time and &__desc
+ * Meant for use within main content areas
+ */
+.timestamps-block {
+  flex-direction: column;
+  /**
+     * Styles for the timestamp, <li>
+     */
+  /**
+     * Styles for the times code
+     */
+  /**
+     * Styles for the description of what happens at the corresponding time code
+     */ }
+  .timestamps-block__timestamp {
+    flex-direction: row;
+    padding-bottom: 0.8em; }
+  .timestamps-block__time {
+    flex: 2;
+    font-weight: bold; }
+  .timestamps-block__desc {
+    flex: 8; }
+
+/**
+ * Container for elements introducing hosts of a given episode
+ * Block level element of BEM
+ * Will contain elements for: host art, name, social links
+ * Can be reused in multiple areas, scaled by parent of .host-intro-block
+ */
+.host-intro-block {
+  width: auto;
+  /**
+     * Styles if only two hosts are on the show
+     */ }
+  .host-intro-block__art-wrap {
+    box-shadow: none;
+    margin: 1.6em auto -0.8em auto;
+    width: 75%; }
+  .host-intro-block__host-art {
+    border-radius: 100em;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  .host-intro-block__copy-links h1 {
+    margin-bottom: 0; }
+  .host-intro-block__--2-hosts {
+    margin: 0; }
+
+/** 
+ * Special styles for when .host-intro-block is in .sub-feature
+ */
+.sub-feature .host-intro-block__copy-links, .sub-feature__--cta-only .host-intro-block__copy-links, .tagline-ribbon .host-intro-block__copy-links, .social-connect .host-intro-block__copy-links {
+  text-align: center; }
+
+/**
+ * Contact page form styles
+ * contact-block is block level of BEM
+ * Contains stlyes for form inputs
+ */
+.contact-block {
+  flex-direction: column;
+  height: 15em;
+  padding-bottom: 1.6em; }
+  .contact-block input, .contact-block textarea {
+    border: 0;
+    border-bottom: 2px solid #ddd;
+    flex: 1;
+    margin: 0.4em 0;
+    padding: 0.4em; }
+  .contact-block textarea {
+    flex: 3; }
+
+/**
+ * Container for embedding social media elements
+ * Block level element of BEM
+ * Will contain elements for: 
+ */
+.social-block {
+  flex: 1;
+  text-align: center; }
+  .social-block h1 {
+    font-family: PT Sans, sans-serif;
+    font-size: 1em;
+    margin: 0.4em 0;
+    word-spacing: 0; }
+  .social-block__youtube-feed {
+    flex: 3;
+    margin-bottom: 0.8em;
+    text-align: left; }
+  .social-block__youtube-container {
+    /**
+         * Following code is for making the youtube embed iframe, responsive
+         * Adapted from https://benmarshall.me/responsive-iframes/
+         */
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    overflow: hidden; }
+    .social-block__youtube-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  .social-block .instagram-feed {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    text-align: left;
+    /*li:first-child{ 
+            padding-left: 0; 
+            padding-right: .5%;
+        }*/ }
+    .social-block .instagram-feed li {
+      padding: 0 .5%;
+      width: 48%;
+      margin-bottom: 9.75%; }
+      .social-block .instagram-feed li a {
+        border-bottom: 0; }
+    .social-block .instagram-feed img {
+      height: auto;
+      max-width: 100%;
+      width: 100%; }
+
+/**
+ * Container for containing .social-block blocks
+ */
+.social-buttons-block .social-block, .social-buttons-block .social-block:first-child, .social-buttons-block .social-block:nth-child(2n+2) {
+  padding: 0; }
+
+.social-buttons-block a {
+  width: 100%; }
+
+/**
+ * Styles for the elements that go in the site footer
+ * Below styles are created with "mobile-first" approach
+ * For tablet/desktop styles, see "../scss/states" 
+ * Class footer-block is the Block of the BEM heiarchy
+ */
+.footer-block {
+  flex: 1; }
+  .footer-block h3, .footer-block li {
+    margin-bottom: 0.4em; }
+  .footer-block ul {
+    margin-top: 0; }
+  .footer-block:nth-child(2n+1) {
+    margin-right: 2%; }
+  .footer-block:nth-child(2n+0) {
+    margin-left: 2%; }
+  .footer-block__copyright {
+    flex-basis: 100%; }
+
+/*
+ * Responsive styles are applied to layout classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: 760px) {
+  .wrapper {
+    min-height: 100%;
+    position: relative; }
+  .page-feature, .page-feature__--heading-only, .sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect {
+    padding: 3.2em 1.6em; }
+  .page-feature__--heading-only {
+    padding: 1.6em; }
+  .sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect {
+    padding: 1.6em; }
+  .sub-feature__--cta-only {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .content:first-child, .related-content:first-child {
+    padding-top: 1.6em; }
+  .content:last-child, .related-content:last-child {
+    padding-bottom: 1.6em; }
+  .related-content .ep-intro-block__copy-links ul, .related-content .host-intro-block__copy-links ul {
+    flex-direction: row; }
+  .social-connect ul {
+    flex-direction: row; }
+    .social-connect ul li:first-child {
+      padding-right: 3.25%; } }
+
+/*
+ * Responsive styles are applied to header-block classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: 760px) {
+  .header-block {
+    /*
+         * Hide mobile-icon when not displaying on mobile sized 
+         */
+    /*
+         * Apply styles to header-block__menu and header-block__form for tablet/desktop viewport 
+         */ }
+    .header-block__mobile-icon {
+      display: none; }
+    .header-block__menu, .header-block__form, .header-block__form {
+      background-color: transparent;
+      background: none;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      justify-content: flex-start;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+      position: relative;
+      top: 0;
+      z-index: 1; }
+      .header-block__menu li, .header-block__form li, .header-block__form li {
+        padding: 0.5em 0.8em 0.5em 0; }
+    .header-block__form input {
+      margin: 0; }
+    .header-block__form input[type='submit'] {
+      color: white;
+      margin: 0;
+      padding-left: 0.8em; }
+      .header-block__form input[type='submit']:focus {
+        color: #e72929; }
+  /*
+     * Menu and search form no longer hidden when at tablet/desktop viewport
+     * Remove transition animations from elements would reveal hidden elements
+     */
+  .slider__from-left {
+    left: 0;
+    transition: none; }
+  .slider__from-right {
+    right: 0;
+    transition: none; } }
+
+/*
+ * Responsive styles are applied to ep-intro-block classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: 760px) {
+  /*
+     * Change flex direction so that title/description/links appear to 
+     *   right of cover art image
+     */
+  .ep-intro-block, .host-intro-block {
+    margin: 0 auto;
+    width: 100%; }
+    .ep-intro-block__web-player, .host-intro-block__art-wrap {
+      flex: 1;
+      margin: 0 auto; }
+    .ep-intro-block__cover-art, .host-intro-block__host-art {
+      top: -26%;
+      left: 0;
+      max-width: 100%; }
+    .ep-intro-block__copy-links, .host-intro-block__copy-links {
+      margin: 0 auto 0 2%; }
+      .ep-intro-block__copy-links h1, .host-intro-block__copy-links h1, .ep-intro-block__copy-links ul, .host-intro-block__copy-links ul {
+        text-align: left; }
+      .ep-intro-block__copy-links ul, .host-intro-block__copy-links ul {
+        flex-direction: column; }
+      .ep-intro-block__copy-links p, .host-intro-block__copy-links p {
+        padding: 0; }
+      .ep-intro-block__copy-links span, .host-intro-block__copy-links span {
+        display: inline; }
+  /**
+     * Special instance of .ep-intro-block
+     * When instance is in .page-feature, make copy links appear to left on non-mobile displays
+     */
+  .page-feature .ep-intro-block, .page-feature__--heading-only .ep-intro-block, .sub-feature .ep-intro-block, .sub-feature__--cta-only .ep-intro-block, .tagline-ribbon .ep-intro-block, .social-connect .ep-intro-block, .page-feature .host-intro-block, .page-feature__--heading-only .host-intro-block, .sub-feature .host-intro-block, .sub-feature__--cta-only .host-intro-block, .tagline-ribbon .host-intro-block, .social-connect .host-intro-block {
+    flex-direction: row; }
+  /**
+     * Special instance of .ep-intro-block
+     * When instance is in .sub-feature, make copy links appear to left on non-mobile displays
+     */
+  .sub-feature .ep-intro-block, .sub-feature__--cta-only .ep-intro-block, .tagline-ribbon .ep-intro-block, .social-connect .ep-intro-block, .sub-feature .host-intro-block, .sub-feature__--cta-only .host-intro-block, .tagline-ribbon .host-intro-block, .social-connect .host-intro-block {
+    flex-direction: column;
+    max-width: 200px; } }
+
+@media (min-width: 640px) {
+  /**
+     * Show elements that are hidden at mobile sizes
+     */
+  .hide-mobile {
+    display: inline; }
+  th.hide-mobile, td.hide-mobile {
+    display: table-cell; } }
+
+/*
+ * Responsive styles are applied to several layout and block classes
+ *   when display is larger than $desk-xl-break wide
+ */
+/* 
+ * Percentage used for outer margins of overall layout at large displays
+ */
+@media (min-width: 960px) {
+  .wrapper {
+    margin-left: 15%;
+    margin-right: 15%; }
+  .site-header, .site-footer, .page-feature, .page-feature__--heading-only, .sub-feature, .sub-feature__--cta-only, .tagline-ribbon, .social-connect {
+    margin-left: -21.42857%;
+    margin-right: -21.42857%;
+    padding-left: 21.42857%;
+    padding-right: 21.42857%;
+    left: 0;
+    right: 0; }
+  .fix-to-top {
+    margin-left: 0;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-right: 0; } }
+
+/*
+ * Responsive styles are applied to the timestamps-block when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: 760px) {
+  .timestamps-block {
+    /**
+         * Styles for the times code
+         */
+    /**
+         * Styles for the description of what happens at the corresponding time code
+         */ }
+    .timestamps-block__time {
+      flex: 1; }
+    .timestamps-block__desc {
+      flex: 9; } }
+
+/*
+ * Responsive styles are applied to social-block and social-buttons-block classes when viewport is larger than 640px wide
+ */
+@media (min-width: 640px) {
+  .social-block .instagram-feed {
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  ul.social-buttons-block li.social-block, ul.social-buttons-block li.social-block:first-child {
+    padding: 0; }
+  ul.social-buttons-block a {
+    width: inherit; } }
+
+/*
+ * Responsive styles are applied to host-intro-block classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: 760px) {
+  .host-intro-block__host-art {
+    top: 0; }
+  .host-intro-block__copy-links {
+    flex: 2; }
+  .host-intro-block__--2-hosts {
+    margin: 0; } }
+
+/*.color-box-wrapper{
+    display: flex;
+    width: 100%;
+    
+    div{ flex-grow: 1; }
+
+    .color-box-1{ background-color: $pcolor-shade-lg; }
+    .color-box-2{ background-color: $pcolor-shade-md; }
+    .color-box-3{ background-color: $pcolor-shade-sm; }
+    .color-box-4{ background-color: $primary-color; }
+    .color-box-5{ background-color: $pcolor-tint-sm; }
+    .color-box-6{ background-color: $pcolor-tint-md; }
+    .color-box-7{ background-color: $pcolor-tint-lg; }
+}
+*/
+
+/*# sourceMappingURL=styles.css.map */

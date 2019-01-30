@@ -1,0 +1,50 @@
+{% set collection = collection|default(page.collection) %}
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <title>{{ collection.params.title }}</title>
+        <link>{{ page.url(true) }}.{{ uri.extension() }}</link>
+        <description>{{ collection.params.description }}</description>
+        <language>{{ collection.params.lang }}</language>
+        <copyright>{{ collection.params.copyright }}</copyright>
+        <itunes:type>episodic</itunes:type>
+        <itunes:author>{{ collection.params.iAuthor }}</itunes:author>
+        <itunes:summary>{{ collection.params.description }}</itunes:summary>
+        <itunes:owner>
+            <itunes:name>{{ collection.params.iOwnerName }}</itunes:name>
+            <itunes:email>{{ collection.params.iOwnerEmail }}</itunes:email>
+        </itunes:owner>
+        <itunes:explicit>{{ collection.params.iExplicit }}</itunes:explicit>
+        <itunes:image href="{{ collection.params.iImage.images |first }}"/>
+        {% for category in collection.params.categories %}
+        <itunes:category text="{{ category }}"/>
+        {% endfor %}
+        <itunes:subtitle>{{ collection.params.iSubtitle }}</itunes:subtitle>
+        <atom:link href="{{ uri.url(true) }}.{{  uri.extension }}" rel="self" type="application/rss+xml"/>
+        {% for item in collection %}
+        {# set banner = item.media.images|first #}
+        <item>
+            {% if item.taxonomy.category[0] == 'podcast' %}
+            <itunes:episodeType>full</itunes:episodeType>
+            {% else %}
+            <itunes:episodeType>bonus</itunes:episodeType>
+            {% endif %}
+            <itunes:title>{{ item.title|e }}</itunes:title>
+            <itunes:episode>{{ item.header.epNum }}</itunes:episode>
+            <title>{{ item.title|e }} {% if item.taxonomy.category[0] == "podcast" %}:: {{ site.title }} #{{ item.header.epNum }}{% endif %}</title>
+            <itunes:summary>Our like/dislike review of this {% for g in item.taxonomy.genre %}{{ g }}, {% endfor %}{% for d in item.taxonomy.decadeType %}{{ d }} {% endfor %}</itunes:summary>
+            <link>{{ item.url(true) }}</link>
+            <description>
+                {{ item.content | replace({'<p>': '', '</p>': ''}) }} 
+                {# for time in item.header.timestamps | keys #}
+                    {# time #} - {# item.header.timestamps[time] #}
+                {# endfor #}
+            </description>
+            {{ item.header.enclosure }}
+            <itunes:image href="http://retrorewindpodcast.com/images/Retro-Rewind-Podcast-Cover.png"/>
+            <guid>{{ item.url(true) }}</guid>
+            <pubDate>{{ item.date|date('D, d M Y H:i:s O') }}</pubDate>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

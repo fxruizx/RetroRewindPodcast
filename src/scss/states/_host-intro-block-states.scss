@@ -1,0 +1,17 @@
+/*
+ * Responsive styles are applied to host-intro-block classes when viewport is larger than $mob-desk-break wide
+ */
+@media (min-width: $mob-desk-break){
+    .host-intro-block{
+        
+        &__host-art{
+            top: 0;
+        }
+        
+        &__copy-links{
+            flex: 2;
+        }
+        
+        &__--2-hosts{ margin: 0; }
+    }
+}

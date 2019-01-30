@@ -1,0 +1,52 @@
+{# extends 'partials/simplesearch_base.html.twig' #}
+{% extends 'listing.html.twig' %}
+
+{% block cta %}
+    <!-- HEADER INCLUDES GLOBAL NAVIGATION -->
+    {% include 'partials/cta-notice.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <section class="content">
+        <h1>Search: "{{ query }}"</h1>
+        <table id="sortable-table" class="archivelist-block">
+            <tr data-sort-method='none'>
+                <th>Ep</th>
+                <th>Title</th>
+                <th class="hide-mobile">Decade/Type</th>
+                <th class="hide-mobile">Genre(s)</th>
+                <th>Final Rating</th>
+            </tr>
+            {% for item in search_results %}
+            <tr>
+                <td>
+                    {% if item.header.epNum %}{{ item.header.epNum }}
+                    {% else %}N/A{% endif %}
+                </td>
+                <td class="archivelist-block__ep-title"><a href="{{ item.url }}">{{ item.title }}</a></td>
+                <td class="hide-mobile">
+                    {% if item.taxonomy.decadeType[0] %}{{ item.taxonomy.decadeType[0] }}
+                    {% elseif item.header.hostRank %}Host
+                    {% else %}Other{% endif %}
+                </td>
+                <td class="hide-mobile">
+                    {% if item.taxonomy.decadeType[0] %}
+                        {% for genre in item.taxonomy.genre %}
+                        <a class="tag-anchor__dark" href="{{ base_url_relative }}/genres/{{ genre | lower }}">{{ genre }}</a> 
+                        {% endfor %}
+                    {% elseif item.header.hostRank %}N/A
+                    {% else %}Other{% endif %}
+                </td>
+                <td>
+                    {% if item.taxonomy.finalRating[0] %}{{ item.taxonomy.finalRating[0] }}
+                    {% elseif item.header.hostRank %}N/A
+                    {% else %}Other{% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <script>
+            new Tablesort(document.getElementById('sortable-table'));
+        </script>
+    </section>
+{% endblock %}

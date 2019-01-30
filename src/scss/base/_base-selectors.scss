@@ -1,0 +1,46 @@
+/**
+ * <html> and <body> reset to have 0 margin and padding
+ */
+html,body{ 
+    height: 100%;
+    margin: 0; 
+    padding: 0; 
+}
+
+/**
+ * Colors and font styles set for <body> and <p> 
+ */
+body, p{ 
+    color: $secondary-color; 
+    font-size: 100%; 
+    font-family: $copy-font-fam; 
+    line-height: $base-line-height; 
+}
+
+/**
+ * <h1> font size set to 262% of normal
+ * <h1> font face is set to $heading-font-fam
+ */
+h1{ 
+    font-size: $xlarge-font-size; 
+    font-family: $heading-font-fam; 
+}
+
+/**
+ * <ul> reset to have no bullets and not indentaion
+ */
+ul{ list-style: none; padding: 0; }
+
+/**
+ * <a> reset to have no underline
+ */
+a, a:hover, a:active{ text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6, li, p{
+    a, a:hover{ 
+        border-bottom: .04em dotted; 
+        padding-bottom: 0em; 
+    }
+}
+
+small{ font-size: .62em; }

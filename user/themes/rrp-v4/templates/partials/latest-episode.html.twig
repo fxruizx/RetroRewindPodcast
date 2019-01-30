@@ -1,0 +1,43 @@
+{# set episodePath = page.find('/episodes') #}
+{% set episodePath = page.evaluate([{ '@page': '/episodes' }]).order('date','desc') %}
+{% set latestEp = episodePath | first %}
+{% set mp3Url = latestEp.header.enclosure | split('"') | slice(1,1) | first %}
+{% for episode in episodePath.children %}
+    {% if episode.header.epNum > latestEp.header.epNum %}
+        {% set latestEp = episode %}
+        {% set mp3Url = latestEp.header.enclosure | split('"') | slice(1,1) | first %}
+    {% endif %}
+{% endfor %}
+
+<article class="ep-intro-block">
+    <div class="ep-intro-block__web-player">
+        {% set coverImg = page.media.images|first %}
+        {% set coverImg2 = latestEp.media.images|first %}
+        {{ coverImg.html(page.title,page.title,'ep-intro-block__cover-art ep-intro-block__cover-art--to-fade') }}
+        {{ coverImg2.html(latestEp.title,latestEp.title,'ep-intro-block__cover-art') }}
+    
+        <div class="ep-intro-block__audio-fill jQ-audio" >
+            <audio preload="none">
+                Your browser does not support the <code>audio</code> element.  
+                <source src='{{ mp3Url }}' type='audio/mp3'>
+            </audio>
+            <span class="ep-intro-block__play-btn jQ-audio-btn" data-enclosure="">
+                <svg viewBox="-1150 -1150 4000 4000" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="ep-intro-block__copy-links">
+        <h1>
+            <small>Latest Episode</small><br/>
+            <a href="{{ latestEp.url }}">{{ latestEp.title }}</a>
+        </h1>
+        <p class="hide-mobile">{{ latestEp.summary }}</p>
+        <ul>
+            <li><a href="{{ latestEp.url }}"><i class="fa fa-hashtag" aria-hidden="true"></i> {{ latestEp.header.epNum }}</a></li>
+            <li><a href="{{ mp3Url }}"><i class="fa fa-download" aria-hidden="true"></i> Download MP3</a></li>
+        </ul>   
+    </div>
+    
+</article>

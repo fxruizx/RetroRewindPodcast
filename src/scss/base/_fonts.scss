@@ -1,0 +1,22 @@
+/**
+ * Importing google fonts
+ * PT Sans is for general copy
+ * Press Start 2P is for display headings
+ */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Press+Start+2P');
+$heading-font-fam: 'Press Start 2P', sans-serif;
+$copy-font-fam: PT Sans, sans-serif;
+
+/**
+ * The standard font size is 1em at 100%
+ */
+$base-font-size: 1em;
+$small-font-size: $base-font-size*0.81;
+$medium-font-size: $base-font-size*1.31;
+$large-font-size: $base-font-size*1.62;
+$xlarge-font-size: $base-font-size*2.62;
+
+/**
+ * The standard baseline or line height is 1.6em
+ */
+$base-line-height: 1.6em;

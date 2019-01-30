@@ -1,0 +1,16 @@
+/*
+ * Responsive styles are applied to social-block and social-buttons-block classes when viewport is larger than 640px wide
+ */
+@media (min-width: 640px){
+    .social-block{
+        .instagram-feed{ 
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    ul.social-buttons-block{
+        li.social-block, li.social-block:first-child{ padding: 0; }
+        a{ width: inherit; }
+    }
+}

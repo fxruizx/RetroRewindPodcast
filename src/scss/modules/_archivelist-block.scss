@@ -1,0 +1,41 @@
+/**
+ * Container for elements in a table listing
+ * Block level element of BEM
+ * Will contain elements for: tr, th, td
+ * Can be reused in multiple areas, but mainly content, scaled by parent of .archivelist-block
+ */
+.archivelist-block{
+    @extend .basic-vpadding-btm;
+    border-spacing: 0;
+    width: 100%;
+    
+    tr{ border-bottom: .1em solid #ddd; }
+    
+    th, td{
+        padding: $base-line-height*.25 $base-line-height*.5;
+        text-align: left; 
+    }
+    
+    th{
+        font-size: $medium-font-size;
+        color: $primary-color;
+        cursor: pointer;
+        
+        /**
+         * Add ascending/descending arrows to table headers that are used for sorting
+         */
+        &[aria-sort='descending']::after, &[aria-sort='ascending']::after{
+            font-family: FontAwesome;
+            font-size: .7em;
+            margin-left: .5em;
+            color: #511;
+        }
+        &[aria-sort="descending"]::after{ content: '\f078'; }
+        &[aria-sort="ascending"]::after{ content: '\f077'; }
+    }
+    
+    tbody>tr:last-child{ border-bottom: none; }
+    
+    &__ep-title{ font-weight: bold; }
+}
+ 

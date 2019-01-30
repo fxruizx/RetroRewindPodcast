@@ -1,0 +1,48 @@
+/*
+ * Responsive styles are applied to header-block classes when viewport is larger than $mob-desk-break-nav wide
+ */
+@media (min-width: $mob-desk-break-nav){
+    .header-block{
+        
+        /*
+         * Hide mobile-icon when not displaying on mobile sized 
+         */
+        &__mobile-icon{ display: none; }
+        
+        /*
+         * Apply styles to header-block__menu and header-block__form for tablet/desktop viewport 
+         */
+        &__menu, &__form{ //Desktop State
+            background-color: transparent;
+            background: none;
+            color: $pcolor-tint-lg;
+            display: flex;
+            flex-direction: row;
+            height: auto;
+            justify-content: flex-start;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            min-width: 0;
+            position: relative;
+            top: 0;
+            z-index: 1;
+            li{
+                padding: .5em $base-line-height*.5 .5em 0;
+            }
+        }
+        
+        &__form input{ margin: 0; }
+        &__form input[type='submit']{ 
+            color: $pcolor-tint-lg; margin: 0; padding-left: $base-line-height*.5; 
+            &:focus { color: $pcolor-tint-md; }
+        }
+    } 
+    
+    /*
+     * Menu and search form no longer hidden when at tablet/desktop viewport
+     * Remove transition animations from elements would reveal hidden elements
+     */
+    .slider__from-left{ left: 0; transition: none; }
+    .slider__from-right{ right: 0; transition: none; }
+}
