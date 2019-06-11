@@ -15,7 +15,7 @@
             <itunes:email>{{ collection.params.iOwnerEmail }}</itunes:email>
         </itunes:owner>
         <itunes:explicit>{{ collection.params.iExplicit }}</itunes:explicit>
-        <itunes:image href="{{ collection.params.iImage.images |first }}"/>
+        <itunes:image href="http://retrorewindpodcast.com/images/Retro-Rewind-Podcast-Cover.png"/>
         {% for category in collection.params.categories %}
         <itunes:category text="{{ category }}"/>
         {% endfor %}
