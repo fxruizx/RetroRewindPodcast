@@ -1,0 +1,61 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block header %}
+    {% include 'partials/header.html.twig' %}
+{% endblock %}
+{% block body %}
+    <section class="page-feature__--heading-only">
+        <h1>{{ page.title }}</h1>
+    </section>
+    {% block cta %}
+    <section class="sub-feature">
+        <h1>Where Your Support Goes</h1>
+        <ul>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-laptop"></h1>
+                <div class="host-intro-block__copy-links"><h1>12% Website Expenses</h1></div> 
+                </div>
+            </li>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-volume-up"></h1>
+                <div class="host-intro-block__copy-links"><h1>21% Audio Expenses</h1></div> 
+                </div>
+            </li>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-smile-o"></h1>
+                <div class="host-intro-block__copy-links"><h1>20% Tithe and Ministiries</h1></div> 
+                </div>
+            </li>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-bank"></h1>
+                <div class="host-intro-block__copy-links"><h1>37% Savings (Trips/Equipment)</h1></div> 
+                </div>
+            </li>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-bullhorn"></h1>
+                <div class="host-intro-block__copy-links"><h1>2% Advertising</h1></div> 
+                </div>
+            </li>
+            <li class="host-intro-block">
+                <h1 class="host-intro-block__art-wrap"><i class="fa fa-coffee"></h1>
+                <div class="host-intro-block__copy-links"><h1>8% Discretionary Spending</h1></div> 
+                </div>
+            </li>
+        </ul>
+    </section>
+    {% endblock %}
+    {% block content %}
+        <section class="content">
+            {{ page.content }}
+        </section>
+    
+        <section class="social-connect">
+            <!-- DISPLAY EMBEDS FROM YOUTUBE, INSTAGRAM, AND TWITTER -->
+            {% include 'partials/social-connect.html.twig' %}
+        </section>
+    {% endblock %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}

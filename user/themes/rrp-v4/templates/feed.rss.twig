@@ -41,7 +41,18 @@
                 {# endfor #}
             </description>
             {{ item.header.enclosure }}
-            <itunes:image href="http://retrorewindpodcast.com/images/Retro-Rewind-Podcast-Cover.png"/>
+            {% if item.media.images | length == 1 %}
+                <itunes:image href="http://retrorewindpodcast.com/images/Retro-Rewind-Podcast-Cover.png"/>
+            {% else %}
+                {% for image in item.media.images %}
+                    {% if 'libsyn' not in image|e %}
+                    {% else %}
+                       <itunes:image href="http://retrorewindpodcast.com{{ image.url }}" />
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+            
             <guid>{{ item.url(true) }}</guid>
             <pubDate>{{ item.date|date('D, d M Y H:i:s O') }}</pubDate>
         </item>
